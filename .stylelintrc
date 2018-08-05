@@ -9,6 +9,7 @@
     ],
     "selector-type-case": null,
     "selector-type-no-unknown": null,
-    "declaration-empty-line-before": null
+    "declaration-empty-line-before": null,
+    "font-family-no-missing-generic-family-keyword": null
   }
 }

@@ -1,27 +1,18 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
+import './common/globalStyles'
 
-const Teapot = () => (
-  <App>
-    <Header>
-      <Title>custom-create-react-app</Title>
-    </Header>
-  </App>
-);
+const Main = () => <Header>custom-create-react-app</Header>
 
-export default Teapot;
-
-const App = styled.div`
-  text-align: center;
-`;
+export default Main
 
 const Header = styled.header`
-  height: 150px;
-  padding: 20px;
+  height: 100vh;
+  font-weight: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
   background-color: #222;
   color: white;
-`;
-
-const Title = styled.h1`
-  font: 1.5em sans-serif;
-`;
+`
