@@ -1,7 +1,11 @@
 {
   "extends": [
-    "prettier",
-    "plugin:react/recommended"
+    "react-app",
+    "prettier"
+  ],
+  "plugins": [
+    "import",
+    "jsx-a11y"
   ],
   "env": {
     "browser": true,
@@ -23,18 +27,7 @@
     "expect": true,
     "describe": true
   },
-  "plugins": [
-    "import",
-    "jsx-a11y"
-  ],
   "rules": {
-    "object-curly-spacing": ["error", "always", {
-      "arraysInObjects": false,
-      "objectsInObjects": false
-    }],
-    "indent": ["error", 2, { "SwitchCase": 1 }],
-    "quotes": [2, "single"],
-    "semi": [2, "never"],
     "no-unused-vars": [2, {
       "vars": "all",
       "args": "none",
@@ -47,20 +40,6 @@
     }],
     "import/order": [2, {
       "groups": ["builtin"]
-    }],
-    "max-len": [2, {
-      "code": 120,
-      "ignoreUrls": true,
-      "ignorePattern": "data:image/png;base64",
-      "ignoreStrings": true,
-      "ignoreTemplateLiterals": true
-    }],
-    "comma-dangle": [2, {
-      "arrays": "never",
-      "objects": "never",
-      "imports": "never",
-      "exports": "never",
-      "functions": "never"
     }],
 
     "arrow-parens": 0,

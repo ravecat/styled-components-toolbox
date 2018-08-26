@@ -1,10 +1,11 @@
-import { injectGlobal } from 'styled-components'
-import { normalize } from 'polished'
-import RobotoThinTTF from './fonts/Roboto-Thin.ttf'
-import RobotoLightTTF from './fonts/Roboto-Light.ttf'
-import RobotoRegularTTF from './fonts/Roboto-Regular.ttf'
-import RobotoMediumTTF from './fonts/Roboto-Medium.ttf'
-import RobotoBoldTTF from './fonts/Roboto-Bold.ttf'
+import { injectGlobal } from "styled-components";
+import { normalize } from "polished";
+import { theme } from "./theme";
+import RobotoThinTTF from "./fonts/Roboto-Thin.ttf";
+import RobotoLightTTF from "./fonts/Roboto-Light.ttf";
+import RobotoRegularTTF from "./fonts/Roboto-Regular.ttf";
+import RobotoMediumTTF from "./fonts/Roboto-Medium.ttf";
+import RobotoBoldTTF from "./fonts/Roboto-Bold.ttf";
 
 injectGlobal`
   ${normalize()};
@@ -14,7 +15,7 @@ injectGlobal`
   }
 
   html {
-    color: black;
+    color: ${theme.primaryText};
   }
   
   * {
@@ -65,4 +66,4 @@ injectGlobal`
     list-style-type: none;
   }
 
-`
+`;
