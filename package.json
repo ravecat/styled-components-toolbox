@@ -21,6 +21,9 @@
     "whatwg-fetch": "2.0.3"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.4.10",
+    "@storybook/addon-options": "^3.4.10",
+    "@storybook/react": "^3.4.10",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
@@ -63,6 +66,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
+    "storybook": "start-storybook -p 9000",
     "precommit": "lint-staged",
     "prettier-watch": "onchange '**/*.js' -- prettier --write {{changed}}"
   },
