@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import "common/globalStyles";
 
 const Main = () => <Header>styled-components-toolbox</Header>;
 

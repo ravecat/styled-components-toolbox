@@ -1,6 +1,5 @@
 import { injectGlobal } from "styled-components";
 import { normalize } from "polished";
-import { theme } from "./theme";
 import RobotoThinTTF from "./fonts/Roboto-Thin.ttf";
 import RobotoLightTTF from "./fonts/Roboto-Light.ttf";
 import RobotoRegularTTF from "./fonts/Roboto-Regular.ttf";
@@ -10,18 +9,16 @@ import RobotoBoldTTF from "./fonts/Roboto-Bold.ttf";
 injectGlobal`
   ${normalize()};
 
+  * {
+    font-family: Roboto, sans-serif;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+
   [hidden] {
     display: none !important;
   }
-
-  html {
-    color: ${theme.primaryText};
-  }
   
-  * {
-    font-family: Roboto, sans-serif;
-  }
-
   @font-face {
     font-family: 'Roboto';
     src: url(${RobotoThinTTF}) format('truetype');
@@ -56,14 +53,4 @@ injectGlobal`
     font-weight: 700;
     font-style: normal;
   }
-
-  b,
-  strong {
-    font-weight: bold;
-  }
-
-  li {
-    list-style-type: none;
-  }
-
 `;
