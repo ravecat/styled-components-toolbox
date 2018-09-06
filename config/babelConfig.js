@@ -1,8 +1,19 @@
+const browsers = require("./browserslist");
 const isDevelopment = process.env.NODE_ENV === "development";
 
-const babelConfig = {
-  babelrc: false,
-  presets: ["react-app"],
+module.exports = {
+  presets: [
+    [
+      "env",
+      {
+        targets: {
+          browsers
+        },
+        modules: false
+      }
+    ],
+    "react-app"
+  ],
   plugins: [
     [
       "babel-plugin-styled-components",
@@ -13,5 +24,3 @@ const babelConfig = {
     ]
   ]
 };
-
-module.exports = babelConfig;

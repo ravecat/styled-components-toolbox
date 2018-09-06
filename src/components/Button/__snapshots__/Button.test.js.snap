@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button> renders correctly 1`] = `
+<button
+  className="sc-bdVaJa cGEieg"
+>
+  <span>
+    Button
+  </span>
+</button>
+`;
+
+exports[`<Button> renders correctly as disabled button 1`] = `
+<button
+  className="sc-bdVaJa gQmbtB"
+  disabled={true}
+>
+  <span>
+    Button
+  </span>
+</button>
+`;
+
+exports[`<Button> renders correctly as link 1`] = `
+<a
+  className="sc-bwzfXH jawcJz"
+  href="http://example.com"
+  target="_blank"
+>
+  <span
+    className="sc-htpNat jjiCEd"
+  >
+    Button
+  </span>
+</a>
+`;
