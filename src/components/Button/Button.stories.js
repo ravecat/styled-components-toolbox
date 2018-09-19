@@ -1,10 +1,10 @@
-import React from "react";
+import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { text, boolean } from "@storybook/addon-knobs";
 import { withReadme } from "storybook-readme";
 import Button from "./index";
-import readme from "./README.md";
+import * as readme from "./README.md";
 
 storiesOf("Button", module).add(
   "Default",
@@ -12,7 +12,8 @@ storiesOf("Button", module).add(
     <Button
       disabled={boolean("disabled", false)}
       href={text("href")}
-      onClick={action("clicked")}>
+      onClick={action("clicked")}
+    >
       {text("value", "Button")}
     </Button>
   ))

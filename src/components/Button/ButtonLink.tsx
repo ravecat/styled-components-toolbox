@@ -1,21 +1,18 @@
-import React from "react";
+import * as React from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 import buttonStyles from "./Button.styles";
 
-const ButtonLink = ({ children, ...rest }) => (
+interface Props {
+  children: any,
+  href?: string,
+}
+
+const ButtonLink = ({ children, ...rest }: Props) => (
   // Use custom A link instead Wrapper
   <Wrapper target="_blank" {...rest}>
     <Span>{children}</Span>
   </Wrapper>
 );
-
-ButtonLink.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ])
-};
 
 export default ButtonLink;
 

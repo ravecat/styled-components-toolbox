@@ -1,20 +1,18 @@
-import React from "react";
+import * as React from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 import buttonStyles from "./Button.styles";
 
-const Button = ({ children, ...rest }) => (
+interface Props {
+  children: any,
+  href?: string,
+  disabled?: boolean,
+}
+
+const Button = ({ children, ...rest }: Props) => (
   <Wrapper {...rest}>
     <span>{children}</span>
   </Wrapper>
 );
-
-Button.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ])
-};
 
 export default Button;
 
