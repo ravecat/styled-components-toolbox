@@ -9,7 +9,6 @@ const WatchMissingNodeModulesPlugin = require("react-dev-utils/WatchMissingNodeM
 const ModuleScopePlugin = require("react-dev-utils/ModuleScopePlugin");
 const getClientEnvironment = require("./env");
 const paths = require("./paths");
-const babelConfig = require("./babelConfig");
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -121,7 +120,7 @@ module.exports = {
           },
           {
             test: /\.(ts|tsx|js|jsx)?$/,
-            loader: "awesome-typescript-loader"
+            use: [{ loader: "awesome-typescript-loader" }]
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
