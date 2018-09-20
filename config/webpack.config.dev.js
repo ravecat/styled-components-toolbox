@@ -120,7 +120,10 @@ module.exports = {
           },
           {
             test: /\.(ts|tsx|js|jsx)?$/,
-            use: [{ loader: "awesome-typescript-loader" }]
+            loader: "awesome-typescript-loader",
+            options: {
+              getCustomTransformers: require("../config/transformers.js")
+            }
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
