@@ -27,6 +27,7 @@
     "@storybook/addon-knobs": "^3.4.10",
     "@storybook/addon-options": "^3.4.10",
     "@storybook/react": "4.0.0-alpha.3",
+    "@types/jest": "^23.3.2",
     "@types/react": "^16.4.14",
     "@types/react-dom": "^16.0.7",
     "awesome-typescript-loader": "^5.2.1",
@@ -67,6 +68,7 @@
     "stylelint-config-standard": "^18.2.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.3.1",
+    "ts-jest": "^23.10.0",
     "typescript": "^3.0.3",
     "webpack": "3.8.1",
     "webpack-dev-server": "2.9.4",
@@ -76,6 +78,7 @@
     "start": "start-storybook -p 9000",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
+    "compile": "tsc",
     "precommit": "lint-staged",
     "prettier-watch": "onchange '**/*.js' -- prettier --write {{changed}}"
   },

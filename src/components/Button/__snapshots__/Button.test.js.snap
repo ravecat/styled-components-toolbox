@@ -10,17 +10,6 @@ exports[`<Button> renders correctly 1`] = `
 </button>
 `;
 
-exports[`<Button> renders correctly as disabled button 1`] = `
-<button
-  className="sc-bdVaJa gQmbtB"
-  disabled={true}
->
-  <span>
-    Button
-  </span>
-</button>
-`;
-
 exports[`<Button> renders correctly as link 1`] = `
 <a
   className="sc-bwzfXH jawcJz"

@@ -1,9 +1,11 @@
 import * as React from "react";
 import styled from "styled-components";
 import buttonStyles from "./Button.styles";
+import { theme } from "../../common/theme";
 
 interface Props {
   children: any,
+  theme: Object,
   href?: string,
   disabled?: boolean,
 }
