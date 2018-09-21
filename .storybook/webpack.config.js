@@ -1,16 +1,18 @@
 const paths = require("../config/paths");
-const path = require("path");
+const getCustomTransformers = require("../config/transformers.js");
 
+// Probably something rules are redundant
 module.exports = (baseConfig, env, defaultConfig) => {
   defaultConfig.module.rules.push({
     test: /\.(ts|tsx|js|jsx)?$/,
     include: paths.appSrc,
     loader: "awesome-typescript-loader",
     options: {
-      getCustomTransformers: require("../config/transformers.js")
+      getCustomTransformers: getCustomTransformers
     }
   });
-  defaultConfig.resolve.modules.push("node_modules", paths.appSrc);
+  defaultConfig.resolve.extensions.push(".ts", ".tsx");
+  defaultConfig.resolve.modules.unshift(paths.appSrc);
 
   return defaultConfig;
 };

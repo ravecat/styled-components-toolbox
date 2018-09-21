@@ -84,14 +84,12 @@
     "prettier-watch": "onchange '**/*.js' -- prettier --write {{changed}}"
   },
   "lint-staged": {
-    "*.js": [
+    "*.{js,jsx,ts,tsx}": [
       "eslint --fix",
+      "stylelint",
       "git add"
     ],
-    "src/**/*.js": [
-      "stylelint"
-    ],
-    "*.{js,json,css,md}": [
+    "*.{js,jsx,ts,tsx,json,css,md}": [
       "prettier --write",
       "git add"
     ]

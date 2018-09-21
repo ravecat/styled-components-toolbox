@@ -1,8 +1,7 @@
-import { withTheme } from "common/helpers";
 import { compose, renderComponent, branch } from "recompose";
-import "common/globalStyles";
-import Button from "./Button.tsx";
-import ButtonLink from "./ButtonLink.tsx";
+import { withTheme } from "common/helpers";
+import ButtonLink from "./components/ButtonLink";
+import Button from "./Button";
 
 export default compose(
   withTheme,
