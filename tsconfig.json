@@ -1,15 +1,30 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
+    "outDir": "./dist/",
     "module": "commonjs",
     "target": "es5",
-    "outDir": "./dist/",
+    "lib": ["es6", "dom"],
     "sourceMap": true,
-    "strictNullChecks": true,
     "jsx": "react",
     "allowJs": true,
-    "baseUrl": "./src"
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true
   },
   "awesomeTypescriptLoaderOptions": {
     "reportFiles": ["./src/**/*"]
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "src/setupTests.ts"
+  ]
 }
