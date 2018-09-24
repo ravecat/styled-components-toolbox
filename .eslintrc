@@ -5,9 +5,11 @@
     "plugin:jest/recommended"
   ],
   "plugins": [
+    "typescript",
     "import",
     "jsx-a11y"
   ],
+  "parser": "typescript-eslint-parser",
   "env": {
     "browser": true,
     "es6": true
@@ -28,57 +30,11 @@
     "expect": true,
     "describe": true
   },
-  "rules": {
-    "no-unused-vars": [2, {
-      "vars": "all",
-      "args": "none",
-      "ignoreRestSiblings": false
-    }],
-    "no-unused-expressions": [2, {
-      "allowShortCircuit": true,
-      "allowTernary": true,
-      "allowTaggedTemplates": true
-    }],
-    "import/order": [2, {
-      "groups": ["builtin"]
-    }],
-
-    "arrow-parens": 0,
-    "no-shadow": 0,
-    "no-console": 0,
-    "consistent-return": 0,
-    "no-underscore-dangle": 0,
-    "import/prefer-default-export": 0,
-    "import/extensions": 0,
-    "no-nested-ternary": 0,
-    "no-confusing-arrow": 0,
-    "import/no-extraneous-dependencies": 0,
-    "import/first": 0,
-    "import/no-unresolved": 0,
-    "import/no-dynamic-require": 0,
-    "global-require": 0,
-
-    "react/jsx-closing-bracket-location": [1, "after-props"],
-    "react/jsx-wrap-multilines": 0,
-    "react/no-danger": 0,
-    "react/no-array-index-key": 0,
-    "react/require-default-props": 0,
-    "react/jsx-filename-extension": [1, {
-      "extensions": [".js", ".jsx"]
-    }],
-
-    "jsx-a11y/label-has-for": [ 2, {
-      "components": [ "Label" ],
-      "required": {
-        "every": [ "nesting", "id" ]
-      },
-      "allowChildren": false
-    }],
-
-    "jsx-a11y/anchor-is-valid": [ "error", {
-      "components": [ "Link" ],
-      "specialLink": [ "to", "hrefLeft", "hrefRight" ],
-      "aspects": [ "noHref", "invalidHref", "preferButton" ]
-    }]
+  "overrides": {
+    "files": ["**/*.ts", "**/*.tsx"],
+    "parser": "typescript-eslint-parser",
+    "rules": {
+      "no-undef": "off"
+    }
   }
 }
