@@ -23,6 +23,7 @@ const Wrapper = styled.button`
   display: inline-block;
   height: 32px;
   padding: 0 15px;
+  line-height: 1.5;
   box-sizing: border-box;
   text-align: center;
   letter-spacing: normal;
