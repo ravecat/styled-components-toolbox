@@ -2,7 +2,7 @@
 
 exports[`<Button> renders correctly 1`] = `
 <button
-  className="sc-htpNat hxmFDc"
+  className="sc-htpNat fwGTjV"
 >
   <span>
     Button
@@ -12,7 +12,7 @@ exports[`<Button> renders correctly 1`] = `
 
 exports[`<Button> renders correctly as link 1`] = `
 <a
-  className="sc-bwzfXH ldAUUR sc-bdVaJa gQiHcK"
+  className="sc-bwzfXH ldAUUR sc-bdVaJa cgVLpQ"
   href="http://example.com"
   target="_blank"
 >

@@ -1,7 +1,7 @@
 import * as styledComponents from "styled-components";
 import { ThemedStyledComponentsModule } from "styled-components";
 
-interface ThemeInterface {
+export interface ThemeInterface {
   darkPrimaryColor: string;
   lightPrimaryColor: string;
   primaryColor: string;
@@ -32,7 +32,8 @@ export const theme = {
 
   // fonts
   fontFamily: "Roboto, sans-serif",
-  fontSize: "14px",
+  fontSize: 14,
+  fontWeight: 400,
 
   //margins
   boxSizing: "border-box"

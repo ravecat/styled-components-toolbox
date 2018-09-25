@@ -1,9 +1,12 @@
 import * as React from "react";
 import { ReactNode } from "react";
-import styled, { css } from "common/theme";
+import styled, { css } from "styled-components";
+import { ThemeInterface } from "common/theme";
+import Mixin from "common/Mixin";
 
 interface Props {
   children: ReactNode;
+  theme: ThemeInterface;
   href?: string;
   disabled?: boolean;
 }
@@ -20,17 +23,18 @@ const Wrapper = styled.button`
   display: inline-block;
   height: 32px;
   padding: 0 15px;
+  box-sizing: border-box;
   text-align: center;
   letter-spacing: normal;
   cursor: pointer;
+  outline: 0;
+  white-space: nowrap;
+  ${Mixin.setThemeFont()}
   color: ${({ theme }) => theme.textColor};
   background: ${({ theme }) => theme.primaryColor};
   border: 1px solid ${({ theme }) => theme.primaryColor};
   border-radius: 0;
-  font-family: Roboto, sans-serif;
-  box-sizing: border-box;
-  font-size: 14px;
-
+  
   :hover {
     background: ${({ theme }) => theme.textColor};
     color: ${({ theme }) => theme.primaryColor};
