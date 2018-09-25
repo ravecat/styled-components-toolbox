@@ -1,15 +1,14 @@
 import * as React from "react";
 import { ReactNode } from "react";
-import styled, { css } from "styled-components";
+import styled, { css } from "common/theme";
 
 interface Props {
   children: ReactNode;
-  theme: Object;
   href?: string;
   disabled?: boolean;
 }
 
-const Button = ({ children, ...rest }: Props) => (
+const Button: React.SFC<Props> = ({ children, ...rest }) => (
   <Wrapper {...rest}>
     <span>{children}</span>
   </Wrapper>

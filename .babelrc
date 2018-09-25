@@ -7,7 +7,8 @@
       },
       "modules": false
     }],
-    "react-app"],
+    "react-app"
+  ],
   "env": {
     "development": {
       "plugins": [
