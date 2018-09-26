@@ -4,14 +4,15 @@ import styled, { css } from "styled-components";
 import { ThemeInterface } from "common/theme";
 import Mixin from "common/Mixin";
 
-interface Props {
-  children: ReactNode;
+interface ButtonProps {
   theme: ThemeInterface;
+  type: string;
+  children?: ReactNode;
   href?: string;
   disabled?: boolean;
 }
 
-const Button: React.SFC<Props> = ({ children, ...rest }) => (
+const Button: React.SFC<ButtonProps> = ({ children, ...rest }) => (
   <Wrapper {...rest}>
     <span>{children}</span>
   </Wrapper>
@@ -19,7 +20,9 @@ const Button: React.SFC<Props> = ({ children, ...rest }) => (
 
 export default Button;
 
-const Wrapper = styled.button`
+const Wrapper = styled.button.attrs({
+  type: props => props.type || "button"
+})`
   display: inline-block;
   height: 32px;
   padding: 0 15px;

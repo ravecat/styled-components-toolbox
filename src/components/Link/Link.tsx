@@ -4,14 +4,14 @@ import styled from "styled-components";
 import { ThemeInterface } from "common/theme";
 import Mixin from "common/Mixin";
 
-interface Props {
+interface LinkProps {
   children: ReactNode;
   theme: ThemeInterface;
   href?: string;
   target?: string;
 }
 
-const Link = ({ children, ...rest }: Props) => (
+const Link = ({ children, ...rest }: LinkProps) => (
   <Wrapper {...rest}>
     <span>{children}</span>
   </Wrapper>
