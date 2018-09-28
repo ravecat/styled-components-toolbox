@@ -1,8 +1,9 @@
 {
   "extends": [
     "react-app",
-    "prettier",
-    "plugin:jest/recommended"
+    "plugin:jest/recommended",
+    "eslint:recommended",
+    "prettier"
   ],
   "plugins": [
     "typescript",
@@ -30,8 +31,20 @@
     "expect": true,
     "describe": true
   },
+  "rules": {
+    "no-unused-vars": [2, {
+      "vars": "all",
+      "args": "none",
+      "ignoreRestSiblings": false
+    }],
+    "no-unused-expressions": [2, {
+      "allowShortCircuit": true,
+      "allowTernary": true,
+      "allowTaggedTemplates": true
+    }]
+  },
   "overrides": {
-    "files": ["**/*.ts", "**/*.tsx"],
+    "files": ["*.{ts,tsx}"],
     "parser": "typescript-eslint-parser",
     "rules": {
       "no-undef": "off"

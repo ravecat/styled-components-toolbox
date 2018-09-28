@@ -14,8 +14,7 @@ interface IconProps {
 }
 
 export default styled.img.attrs<IconProps>({
-  src: ({ condition, alternative, asset }) =>
-    Boolean(condition) ? alternative : asset,
+  src: ({ condition, alternative, asset }) => (condition ? alternative : asset),
   alt: ({ alt }) => alt
 })`
   vertical-align: middle;
