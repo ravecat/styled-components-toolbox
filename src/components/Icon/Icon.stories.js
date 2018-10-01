@@ -16,12 +16,12 @@ storiesOf("Icon", module).add(
   withReadme(readme, () => (
     <Icon
       alt={text("alt")}
-      asset={text("asset", ASSET)}
       alternative={text("alternative", ALTERNATIVE)}
+      asset={text("asset", ASSET)}
       condition={boolean("condition", false)}
       fill={boolean("fill", false)}
-      width={number("width", 30, sizeOptions)}
       height={number("height", 30, sizeOptions)}
+      width={number("width", 30, sizeOptions)}
     />
   ))
 );

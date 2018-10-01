@@ -13,9 +13,9 @@ it("<Icon> renders correctly with condition", () => {
   let tree = renderer
     .create(
       <Icon
-        condition={conditions.asset}
-        asset={conditions.asset}
         alternative={conditions.alternative}
+        asset={conditions.asset}
+        condition={conditions.asset}
       />
     )
     .toJSON();
@@ -24,9 +24,9 @@ it("<Icon> renders correctly with condition", () => {
   tree = renderer
     .create(
       <Icon
-        condition={conditions.alternative}
-        asset={conditions.asset}
         alternative={conditions.alternative}
+        asset={conditions.asset}
+        condition={conditions.alternative}
       />
     )
     .toJSON();

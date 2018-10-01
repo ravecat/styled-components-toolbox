@@ -11,9 +11,9 @@ setDefaultStory(
   "Header",
   readme,
   <Header
+    bold={boolean("bold", false)}
     tag={select("tag", OPTIONS, DEFAULT_TAG)}
     uppercase={boolean("uppecase", false)}
-    bold={boolean("bold", false)}
   >
     {text("value", "Header")}
   </Header>

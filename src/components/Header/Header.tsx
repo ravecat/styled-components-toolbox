@@ -5,8 +5,8 @@ import { ThemeInterface } from "common/theme";
 import Mixin from "common/Mixin";
 
 interface HeaderProps {
-  theme: ThemeInterface;
   children?: ReactNode;
+  theme: ThemeInterface;
   tag?: string;
   uppercase?: boolean;
   bold?: boolean;

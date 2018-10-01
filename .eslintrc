@@ -41,6 +41,10 @@
       "allowShortCircuit": true,
       "allowTernary": true,
       "allowTaggedTemplates": true
+    }],
+    "react/jsx-sort-props": [2, {
+      "noSortAlphabetically": false,
+      "callbacksLast": true
     }]
   },
   "overrides": {
