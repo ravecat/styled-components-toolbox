@@ -84,6 +84,7 @@
     "test": "node scripts/test.js --env=jsdom",
     "eslint": "eslint --fix '**/*.{js,jsx,ts,tsx}'",
     "lint:stylelint": "stylelint '**/*.{js,jsx,ts,tsx}'",
+    "lint:prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,md}'",
     "compile": "tsc",
     "precommit": "lint-staged",
     "prettier-watch": "onchange '**/*.js' -- prettier --write {{changed}}"
