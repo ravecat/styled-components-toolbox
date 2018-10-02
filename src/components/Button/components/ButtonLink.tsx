@@ -4,17 +4,17 @@ import { ThemeInterface } from "common/theme";
 import Link from "components/Link";
 import Mixin from "common/Mixin";
 
-interface Props {
+interface ButtonLinkProps {
   children: ReactNode;
   theme: ThemeInterface;
   href?: string;
   disabled?: boolean;
 }
 
-export default styled(Link)<Props>`
+export default styled(Link)<ButtonLinkProps>`
   height: 32px;
   padding: 0 15px;
-  line-height: 32px;
+  line-height: 30px;
   box-sizing: border-box;
   text-align: center;
   text-decoration: none;
@@ -31,15 +31,13 @@ export default styled(Link)<Props>`
     color: ${({ theme }) => theme.primaryColor};
   }
 
-  ${props =>
-    props.disabled &&
+  ${({ disabled }) =>
+    disabled &&
     css`
-      && {
-        cursor: default;
-        background: ${({ theme }) => theme.textColor};
-        border-color: ${({ theme }) => theme.dividerColor};
-        color: ${({ theme }) => theme.dividerColor};
-        pointer-events: none;
-      }
+      cursor: default;
+      background: ${({ theme }) => theme.textColor};
+      border-color: ${({ theme }) => theme.dividerColor};
+      color: ${({ theme }) => theme.dividerColor};
+      pointer-events: none;
     `};
 `;

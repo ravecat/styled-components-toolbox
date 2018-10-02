@@ -8,20 +8,16 @@ interface LinkProps {
   children: ReactNode;
   theme: ThemeInterface;
   href?: string;
-  target?: string;
+  anchor?: boolean;
 }
 
-const Link = ({ children, ...rest }: LinkProps) => (
-  <Wrapper {...rest}>
+export default styled<LinkProps>(({ children, theme, ...rest }) => (
+  <a {...rest}>
     <span>{children}</span>
-  </Wrapper>
-);
-
-export default Link;
-
-const Wrapper = styled.a.attrs({
-  target: props => (props.target ? "_self" : "_blank"),
-  href: props => props.href || "#"
+  </a>
+)).attrs({
+  href: ({ href }) => href || "#",
+  target: props => (props.anchor ? "_self" : "_blank")
 })`
   color: ${({ theme }) => theme.darkPrimaryColor};
   text-decoration: none;
