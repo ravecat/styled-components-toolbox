@@ -7,9 +7,7 @@ import * as readme from "./README.md";
 const DEFAULT_TAG = "h1";
 const OPTIONS = ["h1", "h2", "h3", "h4", "h5", "h6"];
 
-setDefaultStory(
-  "Header",
-  readme,
+setDefaultStory("Header", readme, () => (
   <Header
     bold={boolean("bold", false)}
     tag={select("tag", OPTIONS, DEFAULT_TAG)}
@@ -17,4 +15,4 @@ setDefaultStory(
   >
     {text("value", "Header")}
   </Header>
-);
+));
