@@ -12,16 +12,10 @@ interface ButtonProps {
   disabled?: boolean;
 }
 
-const Button: React.SFC<ButtonProps> = ({ children, ...rest }) => (
-  <Wrapper {...rest}>
-    <span>{children}</span>
-  </Wrapper>
-);
-
-export default Button;
-
-const Wrapper = styled.button.attrs({
-  type: props => props.type || "button"
+export default styled<ButtonProps>(({ children, theme, ...rest }) => (
+  <button {...rest}>{children}</button>
+)).attrs({
+  type: ({ type }) => type || "button"
 })`
   display: inline-block;
   height: 32px;
@@ -44,8 +38,8 @@ const Wrapper = styled.button.attrs({
     color: ${({ theme }) => theme.primaryColor};
   }
 
-  ${props =>
-    props.disabled &&
+  ${({ disabled }) =>
+    disabled &&
     css`
       && {
         cursor: default;
