@@ -89,7 +89,7 @@
     "lint": "run-s lint:*",
     "compile": "tsc",
     "precommit": "lint-staged",
-    "prettier-watch": "onchange '**/*.js' -- prettier --write {{changed}}"
+    "prettier-watch": "onchange '**/*.{js,jsx,ts,tsx,json,css,md}' -- prettier --write {{changed}}"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

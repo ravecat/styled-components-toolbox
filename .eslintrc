@@ -32,16 +32,6 @@
     "describe": true
   },
   "rules": {
-    "no-unused-vars": [2, {
-      "vars": "all",
-      "args": "none",
-      "ignoreRestSiblings": false
-    }],
-    "no-unused-expressions": [2, {
-      "allowShortCircuit": true,
-      "allowTernary": true,
-      "allowTaggedTemplates": true
-    }],
     "react/jsx-sort-props": [2, {
       "noSortAlphabetically": false,
       "callbacksLast": true
