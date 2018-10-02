@@ -13,7 +13,9 @@ interface ButtonProps {
 }
 
 export default styled<ButtonProps>(({ children, theme, ...rest }) => (
-  <button {...rest}>{children}</button>
+  <button {...rest}>
+    <span>{children}</span>
+  </button>
 )).attrs({
   type: ({ type }) => type || "button"
 })`
