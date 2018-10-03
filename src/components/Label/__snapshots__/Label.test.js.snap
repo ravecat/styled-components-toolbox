@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Label> renders correctly 1`] = `
+<label
+  className="sc-bdVaJa caRMmO"
+  for="test"
+>
+  Label
+</label>
+`;

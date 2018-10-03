@@ -1,1 +1,1 @@
-export { Button, Link, Icon, Header } from "components";
+export { Button, Link, Icon, Header, Label } from "components";
