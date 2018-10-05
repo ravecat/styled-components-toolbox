@@ -2,7 +2,7 @@ import * as React from "react";
 import { ReactNode } from "react";
 import styled, { css } from "styled-components";
 import { ThemeInterface } from "common/theme";
-import Mixin from "common/Mixin";
+import Mixin from "common/mixin";
 
 interface ButtonProps {
   theme: ThemeInterface;

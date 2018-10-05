@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { ReactNode } from "react";
 import { ThemeInterface } from "common/theme";
 import Link from "components/Link";
-import Mixin from "common/Mixin";
+import Mixin from "common/mixin";
 
 interface ButtonLinkProps {
   children: ReactNode;
