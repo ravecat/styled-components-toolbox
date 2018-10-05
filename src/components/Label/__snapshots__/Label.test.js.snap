@@ -2,7 +2,7 @@
 
 exports[`<Label> renders correctly 1`] = `
 <label
-  className="sc-bdVaJa caRMmO"
+  className="sc-bdVaJa ymKtg"
   for="test"
 >
   Label

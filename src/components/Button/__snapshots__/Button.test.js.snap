@@ -13,7 +13,7 @@ exports[`<Button> renders correctly 1`] = `
 
 exports[`<Button> renders correctly as link 1`] = `
 <a
-  className="sc-bwzfXH beChpt sc-bdVaJa gtlQXN"
+  className="sc-bwzfXH byMGrL sc-bdVaJa gtlQXN"
   href="http://example.com"
   target="_blank"
 >

@@ -12,9 +12,7 @@ interface TextProps {
   italic?: boolean;
 }
 
-export default styled.label.attrs<TextProps>({
-  for: ({ labelFor }) => labelFor
-})`
+export default styled.span<TextProps>`
   color: ${({ theme }) => theme.primaryTextColor};
   ${Mixin.setThemeFont()} ${({ uppercase }) =>
     uppercase &&
