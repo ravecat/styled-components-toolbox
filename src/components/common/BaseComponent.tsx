@@ -12,6 +12,8 @@ const BaseComponent = styled.div<BaseProps>`
   margin: 0;
   padding: 0;
   box-sizing: ${theme.boxSizing};
+  border: ${theme.border};
+  vertical-align: ${theme.verticalAlign};
   font-family: ${theme.fontFamily};
   font-size: ${theme.fontSize};
   font-weight: ${theme.fontWeight};

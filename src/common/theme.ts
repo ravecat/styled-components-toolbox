@@ -13,10 +13,13 @@ export interface ThemeInterface {
 
   //fonts
   fontFamily: string;
-  fontSize: string;
+  fontSize: number;
+  fontWeight: number;
 
   // margings, sizes
   boxSizing: string;
+  border: number;
+  verticalAlign: string;
   iconWidth: number;
   iconHeight: number;
 }
@@ -37,8 +40,10 @@ export const theme = {
   fontSize: 14,
   fontWeight: 400,
 
-  // margings, sizes
+  // margings, sizes, borders
   boxSizing: "border-box",
+  border: 0,
+  verticalAlign: "baseline",
   iconWidth: 30,
   iconHeight: 30
 };
