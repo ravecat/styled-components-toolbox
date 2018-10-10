@@ -2,6 +2,7 @@ import * as styledComponents from "styled-components";
 import { ThemedStyledComponentsModule } from "styled-components";
 
 export interface ThemeInterface {
+  //colors
   darkPrimaryColor: string;
   lightPrimaryColor: string;
   primaryColor: string;
@@ -24,7 +25,7 @@ export interface ThemeInterface {
   iconHeight: number;
 }
 
-export const theme = {
+export const theme: ThemeInterface = {
   // colors
   darkPrimaryColor: "#303F9F",
   lightPrimaryColor: "#C5CAE9",
