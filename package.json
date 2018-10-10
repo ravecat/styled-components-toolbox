@@ -61,7 +61,7 @@
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
-    "prettier": "^1.13.5",
+    "prettier": "^1.14.3",
     "promise": "8.0.1",
     "react-test-renderer": "^16.5.1",
     "source-map-loader": "^0.2.4",

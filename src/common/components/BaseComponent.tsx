@@ -19,6 +19,10 @@ export const baseStyles = css`
   color: ${theme.primaryTextColor};
 `;
 
+/* 
+Templated literals with inline functions are broken
+Associated with https://github.com/prettier/prettier/issues/5147, https://github.com/prettier/prettier/issues/5185
+*/
 const BaseComponent = styled.div<BaseProps>`
   ${baseStyles} * {
     ${baseStyles} [hidden] {

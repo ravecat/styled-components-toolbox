@@ -1,21 +1,21 @@
-import { ReactNode } from "react";
+import * as React from "react";
 import styled, { css } from "styled-components";
-import { ThemeInterface } from "common/theme";
-import Mixin from "common/mixin";
+import BaseComponent, { BaseProps } from "common/components/BaseComponent";
 
-interface LabelProps {
-  children?: ReactNode;
-  theme: ThemeInterface;
+interface LabelProps extends BaseProps {
   labelFor?: string;
   uppercase?: boolean;
   bold?: boolean;
 }
 
-export default styled.label.attrs<LabelProps>({
+const Label = styled(({ children, ...rest }) => (
+  <BaseComponent as="label" {...rest}>
+    {children}
+  </BaseComponent>
+)).attrs({
   for: ({ labelFor }) => labelFor
-})`
-  color: ${({ theme }) => theme.primaryTextColor};
-  ${Mixin.setThemeFont()} ${({ uppercase }) =>
+})<LabelProps>`
+  ${({ uppercase }) =>
     uppercase &&
     css`
       text-transform: uppercase;
@@ -26,3 +26,5 @@ export default styled.label.attrs<LabelProps>({
       font-weight: 700;
     `};
 `;
+
+export default Label;
