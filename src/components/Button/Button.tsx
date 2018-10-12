@@ -1,21 +1,17 @@
 import * as React from "react";
-import { ReactNode } from "react";
-import styled, { css } from "styled-components";
-import { ThemeInterface } from "common/theme";
-import Mixin from "common/mixin";
+import styled, { css } from "common/theme";
+import BaseComponent, { BaseProps } from "common/components/BaseComponent";
 
-interface ButtonProps {
-  theme: ThemeInterface;
-  type: string;
-  children?: ReactNode;
+interface ButtonProps extends BaseProps {
+  type?: string;
   href?: string;
   disabled?: boolean;
 }
 
-export default styled<ButtonProps>(({ children, theme, ...rest }) => (
-  <button {...rest}>
+export default styled<ButtonProps>(({ children, ...rest }) => (
+  <BaseComponent as="button" {...rest}>
     <span>{children}</span>
-  </button>
+  </BaseComponent>
 )).attrs({
   type: ({ type }) => type || "button"
 })`
@@ -23,18 +19,16 @@ export default styled<ButtonProps>(({ children, theme, ...rest }) => (
   height: 32px;
   padding: 0 15px;
   line-height: 1.5;
-  box-sizing: border-box;
   text-align: center;
   letter-spacing: normal;
   cursor: pointer;
   outline: 0;
   white-space: nowrap;
-  ${Mixin.setThemeFont()}
   color: ${({ theme }) => theme.textColor};
   background: ${({ theme }) => theme.primaryColor};
   border: 1px solid ${({ theme }) => theme.primaryColor};
   border-radius: 0;
-  
+
   :hover {
     background: ${({ theme }) => theme.textColor};
     color: ${({ theme }) => theme.primaryColor};

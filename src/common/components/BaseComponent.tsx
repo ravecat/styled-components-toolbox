@@ -11,12 +11,10 @@ export const baseStyles = css`
   margin: 0;
   padding: 0;
   box-sizing: ${theme.boxSizing};
-  border: ${theme.border};
   vertical-align: ${theme.verticalAlign};
   font-family: ${theme.fontFamily};
   font-size: ${theme.fontSize}px;
   font-weight: ${theme.fontWeight};
-  color: ${theme.primaryTextColor};
 `;
 
 /* 

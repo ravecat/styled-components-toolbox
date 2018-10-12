@@ -1,14 +1,14 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
+import styled, { css } from "common/theme";
 import BaseComponent, { BaseProps } from "common/components/BaseComponent";
 
 interface LabelProps extends BaseProps {
-  labelFor?: string;
+  for?: string;
   uppercase?: boolean;
   bold?: boolean;
 }
 
-const Label = styled(({ children, ...rest }) => (
+const Label = styled<LabelProps>(({ children, ...rest }) => (
   <BaseComponent as="label" {...rest}>
     {children}
   </BaseComponent>
