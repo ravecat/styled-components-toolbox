@@ -8,12 +8,12 @@ interface ButtonProps extends BaseProps {
   disabled?: boolean;
 }
 
-export default styled<ButtonProps>(({ children, ...rest }) => (
+const Button = styled<ButtonProps>(({ children, ...rest }) => (
   <BaseComponent as="button" {...rest}>
     <span>{children}</span>
   </BaseComponent>
 )).attrs({
-  type: ({ type }) => type || "button"
+  type: ({ type }: ButtonProps) => type || "button"
 })`
   display: inline-block;
   height: 32px;
@@ -45,3 +45,5 @@ export default styled<ButtonProps>(({ children, ...rest }) => (
       }
     `};
 `;
+
+export default Button;

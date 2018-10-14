@@ -1,26 +1,19 @@
-import styled, { css } from "styled-components";
-import { ReactNode } from "react";
-import { ThemeInterface } from "common/theme";
+import styled, { css } from "common/theme";
 import Link from "components/Link";
-import Mixin from "common/mixin";
+import { BaseProps } from "common/components/BaseComponent";
 
-interface ButtonLinkProps {
-  children: ReactNode;
-  theme: ThemeInterface;
-  href?: string;
+interface ButtonLinkProps extends BaseProps {
   disabled?: boolean;
 }
 
-export default styled(Link)<ButtonLinkProps>`
+const ButtonLink = styled(Link)<ButtonLinkProps>`
   height: 32px;
   padding: 0 15px;
   line-height: 30px;
-  box-sizing: border-box;
   text-align: center;
   text-decoration: none;
   letter-spacing: normal;
   cursor: pointer;
-  ${Mixin.setThemeFont()}
   color: ${({ theme }) => theme.textColor};
   background: ${({ theme }) => theme.primaryColor};
   border: 1px solid ${({ theme }) => theme.primaryColor};
@@ -41,3 +34,5 @@ export default styled(Link)<ButtonLinkProps>`
       pointer-events: none;
     `};
 `;
+
+export default ButtonLink;

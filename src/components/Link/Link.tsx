@@ -1,25 +1,22 @@
 import * as React from "react";
-import { ReactNode } from "react";
-import styled from "styled-components";
-import { ThemeInterface } from "common/theme";
-import Mixin from "common/mixin";
+import styled from "common/theme";
+import BaseComponent, { BaseProps } from "common/components/BaseComponent";
 
-interface LinkProps {
-  children: ReactNode;
-  theme: ThemeInterface;
+interface LinkProps extends BaseProps {
   href?: string;
   anchor?: boolean;
 }
 
-export default styled<LinkProps>(({ children, theme, ...rest }) => (
-  <a {...rest}>
+const Link = styled<LinkProps>(({ children, ...rest }) => (
+  <BaseComponent as="a" {...rest}>
     <span>{children}</span>
-  </a>
+  </BaseComponent>
 )).attrs({
-  href: ({ href }) => href || "#",
-  target: props => (props.anchor ? "_self" : "_blank")
+  href: ({ href }: LinkProps) => href || "#",
+  target: ({ anchor }: LinkProps) => (anchor ? "_self" : "_blank")
 })`
   color: ${({ theme }) => theme.darkPrimaryColor};
   text-decoration: none;
-  ${Mixin.setThemeFont()};
 `;
+
+export default Link;
