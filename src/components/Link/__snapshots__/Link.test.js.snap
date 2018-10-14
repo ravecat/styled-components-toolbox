@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Link> renders correctly 1`] = `
+<a
+  className="sc-bwzfXH eDfhwO sc-bdVaJa bRICED"
+  href="#"
+  target="_blank"
+>
+  <span>
+    Link
+  </span>
+</a>
+`;
