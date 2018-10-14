@@ -1,11 +1,11 @@
 import styled, { css } from "styled-components";
 import { ThemeInterface } from "common/theme";
 
-interface IconProps {
+export interface IconProps {
   theme: ThemeInterface;
   asset?: string;
   alternative?: string;
-  condition?: any;
+  condition?: boolean;
   alt?: string;
   margin?: string;
   fill?: boolean;
@@ -13,9 +13,10 @@ interface IconProps {
   height?: number;
 }
 
-export default styled.img.attrs<IconProps>({
-  src: ({ condition, alternative, asset }) => (condition ? alternative : asset),
-  alt: ({ alt }) => alt
+const Icon = styled.img.attrs<IconProps>({
+  src: ({ condition, alternative, asset }: IconProps) =>
+    condition ? alternative : asset,
+  alt: ({ alt }: IconProps) => alt
 })`
   vertical-align: middle;
   float: none;
@@ -35,3 +36,5 @@ export default styled.img.attrs<IconProps>({
       height: auto;
     `};
 `;
+
+export default Icon;
