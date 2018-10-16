@@ -18,7 +18,7 @@ const Button = styled<ButtonProps>(({ children, ...rest }) => (
   display: inline-block;
   height: 32px;
   padding: 0 15px;
-  line-height: 1.5;
+  line-height: 30px;
   text-align: center;
   letter-spacing: normal;
   cursor: pointer;
