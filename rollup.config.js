@@ -4,42 +4,57 @@ import commonjs from "rollup-plugin-commonjs";
 import babel from "rollup-plugin-babel";
 import flow from "rollup-plugin-flow";
 import sourceMaps from "rollup-plugin-sourcemaps";
+import typescript from "rollup-plugin-typescript2";
+import svg from "rollup-plugin-svg";
 
 const commonPlugins = [
   flow({
     pretty: true
   }),
   sourceMaps(),
-  nodeResolve(),
+  nodeResolve({
+    jsnext: true,
+    main: true,
+    browser: true,
+    extensions: [".ts", ".tsx", ".js", ".jsx"]
+  }),
   babel({
     exclude: "node_modules/**"
   }),
+  svg(),
+  typescript(),
   commonjs({
-    ignoreGlobal: true
+    namedExports: {
+      react: [
+        "cloneElement",
+        "createFactory",
+        "Component",
+        "PropTypes",
+        "createElement",
+        "createContext"
+      ],
+      "react-dom": ["render"],
+      "react-is": ["isElement", "isValidElementType", "ForwardRef"]
+    }
   })
 ];
 
+const globals = { react: "React", "react-dom": "ReactDOM" };
+
 const configBase = {
   input: "./src/index.js",
-
-  // \0 is rollup convention for generated in memory modules
-  external: id =>
-    !id.startsWith("\0") && !id.startsWith(".") && !id.startsWith("/"),
   plugins: commonPlugins
 };
-
-const globals = { react: "React", "react-dom": "ReactDOM" };
 
 const standaloneBaseConfig = {
   ...configBase,
   output: {
     file: "dist/styled-components-toolbox.js",
-    format: "iife",
-    globals,
+    format: "cjs",
     name: "sct",
+    globals,
     sourcemap: true
   },
-  external: Object.keys(globals),
   plugins: configBase.plugins
 };
 

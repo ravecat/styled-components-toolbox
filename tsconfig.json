@@ -1,19 +1,21 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "src",
     "outDir": "./dist/",
-    "module": "commonjs",
     "target": "es5",
+    "module": "esnext",
     "lib": ["es6", "dom"],
     "sourceMap": true,
     "jsx": "react",
     "allowJs": true,
+    "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "noImplicitAny": true
   },
   "awesomeTypescriptLoaderOptions": {
     "reportFiles": ["./src/**/*"]

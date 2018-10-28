@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { ThemeInterface } from "common/theme";
 
-export interface IconProps {
+interface IconProps {
   theme: ThemeInterface;
   asset?: string;
   alternative?: string;

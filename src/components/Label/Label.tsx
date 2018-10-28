@@ -6,6 +6,7 @@ interface LabelProps extends BaseProps {
   for?: string;
   uppercase?: boolean;
   bold?: boolean;
+  labelFor?: string;
 }
 
 const Label = styled<LabelProps>(({ children, ...rest }) => (

@@ -1,5 +1,4 @@
 import { withTheme } from "common/helpers";
-import Icon, { IconProps } from "./Icon";
+import Icon from "./Icon";
 
-export { IconProps };
 export default withTheme(Icon);
