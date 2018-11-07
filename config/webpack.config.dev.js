@@ -1,5 +1,6 @@
 "use strict";
 
+const autoprefixer = require("autoprefixer");
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -7,6 +8,7 @@ const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 const InterpolateHtmlPlugin = require("react-dev-utils/InterpolateHtmlPlugin");
 const WatchMissingNodeModulesPlugin = require("react-dev-utils/WatchMissingNodeModulesPlugin");
 const ModuleScopePlugin = require("react-dev-utils/ModuleScopePlugin");
+const FlowWebpackPlugin = require("flow-webpack-plugin");
 const getClientEnvironment = require("./env");
 const paths = require("./paths");
 
@@ -30,10 +32,10 @@ module.exports = {
       path.resolve(info.absoluteResourcePath).replace(/\\/g, "/")
   },
   resolve: {
-    modules: [paths.appSrc, paths.appNodeModules].concat(
+    modules: [paths.appNodeModules, paths.appSrc].concat(
       process.env.NODE_PATH.split(path.delimiter).filter(Boolean)
     ),
-    extensions: [".ts", ".tsx", ".js", ".jsx"],
+    extensions: [".web.js", ".mjs", ".js", ".json", ".web.jsx", ".jsx"],
     alias: {
       "react-native": "react-native-web"
     },
@@ -42,11 +44,6 @@ module.exports = {
   module: {
     strictExportPresence: true,
     rules: [
-      {
-        enforce: "pre",
-        test: /\.js$/,
-        loader: "source-map-loader"
-      },
       {
         oneOf: [
           {
@@ -58,11 +55,42 @@ module.exports = {
             }
           },
           {
-            test: /\.(ts|tsx|js|jsx)?$/,
-            loader: "awesome-typescript-loader",
+            test: /\.(js|jsx|mjs)$/,
+            include: paths.appSrc,
+            loader: require.resolve("babel-loader"),
             options: {
-              getCustomTransformers: require("../config/transformers.js")
+              cacheDirectory: true
             }
+          },
+          {
+            test: /\.css$/,
+            use: [
+              require.resolve("style-loader"),
+              {
+                loader: require.resolve("css-loader"),
+                options: {
+                  importLoaders: 1
+                }
+              },
+              {
+                loader: require.resolve("postcss-loader"),
+                options: {
+                  ident: "postcss",
+                  plugins: () => [
+                    require("postcss-flexbugs-fixes"),
+                    autoprefixer({
+                      browsers: [
+                        ">1%",
+                        "last 4 versions",
+                        "Firefox ESR",
+                        "not ie < 9" // React doesn't support IE8 anyway
+                      ],
+                      flexbox: "no-2009"
+                    })
+                  ]
+                }
+              }
+            ]
           },
           {
             exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/],
@@ -86,7 +114,8 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new CaseSensitivePathsPlugin(),
     new WatchMissingNodeModulesPlugin(paths.appNodeModules),
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    new FlowWebpackPlugin()
   ],
   node: {
     dgram: "empty",
@@ -97,10 +126,5 @@ module.exports = {
   },
   performance: {
     hints: false
-  },
-  externals: {
-    react: "React",
-    "react-dom": "ReactDOM"
-  },
-  devtool: "source-map"
+  }
 };

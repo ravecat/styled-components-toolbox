@@ -4,7 +4,6 @@ import commonjs from "rollup-plugin-commonjs";
 import babel from "rollup-plugin-babel";
 import flow from "rollup-plugin-flow";
 import sourceMaps from "rollup-plugin-sourcemaps";
-import typescript from "rollup-plugin-typescript2";
 import svg from "rollup-plugin-svg";
 
 const commonPlugins = [
@@ -22,7 +21,6 @@ const commonPlugins = [
     exclude: "node_modules/**"
   }),
   svg(),
-  typescript(),
   commonjs({
     namedExports: {
       react: [

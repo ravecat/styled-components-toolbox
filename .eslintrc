@@ -1,20 +1,22 @@
-{
+{  
   "extends": [
     "react-app",
     "plugin:jest/recommended",
     "plugin:jsx-a11y/strict",
+    "plugin:flowtype/recommended",
     "eslint:recommended",
     "prettier"
   ],
   "plugins": [
-    "typescript",
-    "import"
+    "flowtype",
+    "import",
+    "jsx-a11y"
   ],
-  "parser": "typescript-eslint-parser",
   "env": {
     "browser": true,
     "es6": true
   },
+  "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
@@ -32,16 +34,19 @@
     "describe": true
   },
   "rules": {
+    "flowtype/require-valid-file-annotation": 0,
     "react/jsx-sort-props": [2, {
-      "noSortAlphabetically": false,
-      "callbacksLast": true
+      "noSortAlphabetically": false
+    }],
+    "no-unused-vars": [2, {
+      "vars": "all",
+      "args": "none",
+      "ignoreRestSiblings": false
+    }],
+    "no-unused-expressions": [2, {
+      "allowShortCircuit": true,
+      "allowTernary": true,
+      "allowTaggedTemplates": true
     }]
-  },
-  "overrides": {
-    "files": ["*.{ts,tsx}"],
-    "parser": "typescript-eslint-parser",
-    "rules": {
-      "no-undef": "off"
-    }
   }
 }

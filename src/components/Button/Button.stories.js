@@ -10,6 +10,8 @@ setDefaultStory("Button", readme, () => (
     disabled={boolean("disabled", false)}
     href={text("href")}
     onClick={action("clicked")}
+    // TODO Set wrong type for test flow
+    type={42}
   >
     {text("value", "Button")}
   </Button>
