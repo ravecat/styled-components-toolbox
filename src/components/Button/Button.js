@@ -1,7 +1,7 @@
 /* @flow */
 import React from "react";
-import styled, { css, type ReactComponentStyled } from "styled-components";
-import BaseComponent, { BaseProps } from "common/components/BaseComponent";
+import styled, { css } from "styled-components";
+import BaseComponent, { type BaseProps } from "common/components/BaseComponent";
 
 type ButtonProps = BaseProps & {
   type?: string,
@@ -10,13 +10,12 @@ type ButtonProps = BaseProps & {
 };
 
 const Button = ({ children, ...rest }: ButtonProps) => (
-  // TODO Set wrong type for test flow
-  <Wrapper as="button" type={42} {...rest}>
+  <Wrapper as="button" {...rest}>
     <span>{children}</span>
   </Wrapper>
 );
 
-const Wrapper: ReactComponentStyled<ButtonProps> = styled(BaseComponent).attrs({
+const Wrapper = styled(BaseComponent).attrs({
   type: ({ type }) => type || "button"
 })`
   display: inline-block;

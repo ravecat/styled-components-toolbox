@@ -1,5 +1,6 @@
 /* @flow */
-import styled, { css, type ReactComponentStyled } from "styled-components";
+import { type ComponentType } from "react";
+import styled, { css } from "styled-components";
 import Link from "components/Link";
 import { type BaseProps } from "common/components/BaseComponent";
 
@@ -7,7 +8,7 @@ type ButtonLinkProps = BaseProps & {
   disabled?: boolean
 };
 
-const ButtonLink: ReactComponentStyled<ButtonLinkProps> = styled(Link)`
+const ButtonLink: ComponentType<ButtonLinkProps> = styled(Link)`
   height: 32px;
   padding: 0 15px;
   line-height: 30px;
