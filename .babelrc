@@ -10,7 +10,10 @@
     "flow",
     "react"
   ],
-  "plugins": ["transform-object-rest-spread"],
+  "plugins": [
+    "external-helpers",
+    "transform-object-rest-spread"
+  ],
   "env": {
     "development": {
       "plugins": [

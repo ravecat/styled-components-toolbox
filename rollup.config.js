@@ -6,22 +6,25 @@ import flow from "rollup-plugin-flow";
 import sourceMaps from "rollup-plugin-sourcemaps";
 import svg from "rollup-plugin-svg";
 
+const paths = require('./config/paths')
+
 const commonPlugins = [
-  flow({
-    pretty: true
-  }),
+  flow(),
   sourceMaps(),
+  babel({
+    exclude: "node_modules/**",
+    runtimeHelpers: true
+  }),
   nodeResolve({
     jsnext: true,
-    main: true,
     browser: true,
-    extensions: [".ts", ".tsx", ".js", ".jsx"]
-  }),
-  babel({
-    exclude: "node_modules/**"
+    customResolveOptions: {
+      moduleDirectory: [paths.appSrc]
+    }
   }),
   svg(),
   commonjs({
+    include: 'node_modules/**',
     namedExports: {
       react: [
         "cloneElement",
@@ -49,7 +52,7 @@ const standaloneBaseConfig = {
   output: {
     file: "dist/styled-components-toolbox.js",
     format: "cjs",
-    name: "sct",
+    name: "styled-components-toolbox",
     globals,
     sourcemap: true
   },
