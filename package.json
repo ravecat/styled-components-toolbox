@@ -128,10 +128,6 @@
       "eslint --fix",
       "stylelint",
       "git add"
-    ],
-    "src/**/*.{js,jsx,json,css,md}": [
-      "prettier --write",
-      "git add"
     ]
   }
 }
