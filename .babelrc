@@ -1,10 +1,7 @@
 {
   "presets": [[
-    "env", {
-      "targets": {
-        "browsers": ["last 2 versions", "> 5% in BE"],
-        "uglify": true
-      },
+    "env",
+    {
       "modules": false
     }],
     "flow",

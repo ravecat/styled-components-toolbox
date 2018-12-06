@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { theme } from "common/theme";
 
 const ThemeContext = React.createContext(theme);

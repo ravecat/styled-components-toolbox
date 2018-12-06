@@ -1,5 +1,7 @@
 /* eslint-disable flowtype/require-valid-file-annotation, no-console, import/extensions */
 import nodeResolve from "rollup-plugin-node-resolve";
+import includePaths from 'rollup-plugin-includepaths';
+import json from 'rollup-plugin-json';
 import commonjs from "rollup-plugin-commonjs";
 import babel from "rollup-plugin-babel";
 import flow from "rollup-plugin-flow";
@@ -11,16 +13,16 @@ const paths = require('./config/paths')
 const commonPlugins = [
   flow(),
   sourceMaps(),
+  json(),
+  includePaths({
+    paths: ['src'],
+  }),
+  nodeResolve(),
   babel({
     exclude: "node_modules/**",
-    runtimeHelpers: true
-  }),
-  nodeResolve({
-    jsnext: true,
-    browser: true,
-    customResolveOptions: {
-      moduleDirectory: [paths.appSrc]
-    }
+    plugins: [
+      'external-helpers'
+    ]
   }),
   svg(),
   commonjs({
