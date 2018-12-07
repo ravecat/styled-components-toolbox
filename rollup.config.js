@@ -2,15 +2,15 @@
 import nodeResolve from "rollup-plugin-node-resolve";
 import includePaths from 'rollup-plugin-includepaths';
 import json from 'rollup-plugin-json';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import commonjs from "rollup-plugin-commonjs";
 import babel from "rollup-plugin-babel";
 import flow from "rollup-plugin-flow";
 import sourceMaps from "rollup-plugin-sourcemaps";
 import svg from "rollup-plugin-svg";
 
-const paths = require('./config/paths')
-
 const commonPlugins = [
+  peerDepsExternal(),
   flow(),
   sourceMaps(),
   json(),
