@@ -15,9 +15,9 @@ const Button = ({ children, ...rest }: ButtonProps) => (
   </Wrapper>
 );
 
-const Wrapper = styled(BaseComponent).attrs({
-  type: ({ type }) => type || "button"
-})`
+const Wrapper = styled(BaseComponent).attrs(props => ({
+  type: props.type || "button"
+}))`
   display: inline-block;
   height: 32px;
   padding: 0 15px;

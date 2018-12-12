@@ -14,10 +14,10 @@ const Link = ({ children, ...rest }: LinkProps) => (
   </Wrapper>
 );
 
-const Wrapper = styled(BaseComponent).attrs({
-  href: ({ href }) => href || "#",
-  target: ({ anchor }) => (anchor ? "_self" : "_blank")
-})`
+const Wrapper = styled(BaseComponent).attrs(props => ({
+  href: props.href || "#",
+  target: props.anchor ? "_self" : "_blank"
+}))`
   color: ${({ theme }) => theme.darkPrimaryColor};
   text-decoration: none;
 `;

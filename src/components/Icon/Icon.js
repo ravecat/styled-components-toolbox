@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components";
 
-const Icon = styled.img.attrs({
-  src: ({ condition, alternative, asset }) => condition ? alternative : asset,
-  alt: ({ alt }) => alt
-})`
+const Icon = styled.img.attrs(props => ({
+  src: props.condition ? props.alternative : props.asset,
+  alt: props.alt
+}))`
   vertical-align: middle;
   float: none;
   width: ${({ width, theme: { iconWidth } }) => width || iconWidth}px;
