@@ -1,4 +1,4 @@
-import { withTheme } from "common/helpers";
+import { withTheme } from "common/services";
 import Link from "./Link";
 
 export default withTheme(Link);

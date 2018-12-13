@@ -1,5 +1,5 @@
 import { compose, renderComponent, branch } from "recompose";
-import { withTheme } from "common/helpers";
+import { withTheme } from "common/services";
 import ButtonLink from "./components/ButtonLink";
 import Button from "./Button";
 
