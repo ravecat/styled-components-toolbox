@@ -3,7 +3,9 @@ import renderer from "react-test-renderer";
 import Icon from "../index";
 
 it("<Icon> renders correctly", () => {
-  const tree = renderer.create(<Icon />).toJSON();
+  const tree = renderer.create(<Icon
+    alt="icon"
+  />).toJSON();
   expect(tree).toMatchSnapshot();
 });
 

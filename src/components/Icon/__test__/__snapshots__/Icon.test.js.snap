@@ -2,6 +2,7 @@
 
 exports[`<Icon> renders correctly 1`] = `
 <img
-  className="sc-bdVaJa bwSEuj"
+  alt="icon"
+  className="sc-bdVaJa lgYwpm"
 />
 `;

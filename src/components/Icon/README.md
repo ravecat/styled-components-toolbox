@@ -9,6 +9,7 @@ Semantic vector graphics.
 | _asset_       | image source for the icon                                                       | string  | -       |
 | _alternative_ | alternative image source for the icon that is enabled by the `condition` change | string  | -       |
 | _condition_   | the condition for the transition between two icon states                        | boolean | `false` |
+| _pointer_     | the condition for the change cursor on hover                                    | boolean | `false` |
 | _alt_         | set the `alt` attribute                                                         | string  | -       |
 | _margin_      | set the icon margin parameters                                                  | string  | `0`     |
 | _fill_        | the icon fills the available space                                              | boolean | `false` |

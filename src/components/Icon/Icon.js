@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
 
-const Icon = styled.img.attrs(props => ({
-  src: props.condition ? props.alternative : props.asset,
-  alt: props.alt
+const Icon = styled.img.attrs(({ alternative, asset, condition, alt }) => ({
+  src: condition ? alternative : asset,
+  alt
 }))`
   vertical-align: middle;
   float: none;
@@ -13,11 +13,17 @@ const Icon = styled.img.attrs(props => ({
     css`
       border: 1px dotted ${accentColor};
     `};
-  ${({ fill }) => fill &&
+  ${({ fill, height }) => fill &&
     css`
       width: 100%;
       max-height: 100%;
-      height: auto;
+      height: ${height ? height : 'auto'};
+    `};
+  ${({ pointer }) => pointer &&
+    css`
+      :hover {
+        cursor: pointer;
+      }
     `};
 `;
 

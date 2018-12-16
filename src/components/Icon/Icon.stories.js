@@ -18,6 +18,7 @@ storiesOf("Icon", module)
       condition={boolean("condition", false)}
       fill={boolean("fill", false)}
       height={number("height", 30, sizeOptions)}
+      pointer={boolean("pointer", false)}
       width={number("width", 30, sizeOptions)}
     />
   ));
