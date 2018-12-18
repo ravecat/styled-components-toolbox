@@ -19,15 +19,13 @@ export const baseStyles = css`
   font-weight: ${theme.fontWeight};
 `;
 
-/* 
-Templated literals with inline functions are broken
-Associated with https://github.com/prettier/prettier/issues/5147, https://github.com/prettier/prettier/issues/5185
-*/
 const BaseComponent: ReactComponentStyled<BaseProps> = styled.div`
   ${baseStyles}
   
   * {
-    ${baseStyles} [hidden] {
+    ${baseStyles}
+    
+    [hidden] {
       display: none !important;
     }
 
