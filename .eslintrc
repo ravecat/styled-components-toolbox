@@ -35,6 +35,8 @@
   },
   "rules": {
     "flowtype/require-valid-file-annotation": 0,
+    "eol-last": [2, "always"],
+    "object-curly-spacing": [2, "always", { "arraysInObjects": false }],
     "react/jsx-sort-props": [2, {
       "noSortAlphabetically": false
     }],

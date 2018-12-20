@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import BaseComponent from "common/components/BaseComponent";
 
-const Label = styled(BaseComponent).attrs(({labelFor}) => ({
+const Label = styled(BaseComponent).attrs(({ labelFor }) => ({
   for: labelFor,
   as: "label"
 }))`
