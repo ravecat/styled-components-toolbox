@@ -18,13 +18,13 @@ const commonPlugins = [
     paths: ['src'],
   }),
   nodeResolve(),
+  svg(),
   babel({
     exclude: "node_modules/**",
     plugins: [
       'external-helpers'
     ]
   }),
-  svg(),
   commonjs({
     include: 'node_modules/**',
     namedExports: {
