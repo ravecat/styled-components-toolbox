@@ -3,12 +3,10 @@
     "react-app",
     "plugin:jest/recommended",
     "plugin:jsx-a11y/strict",
-    "plugin:flowtype/recommended",
     "eslint:recommended",
     "prettier"
   ],
   "plugins": [
-    "flowtype",
     "import",
     "jsx-a11y"
   ],
@@ -34,7 +32,6 @@
     "describe": true
   },
   "rules": {
-    "flowtype/require-valid-file-annotation": 0,
     "eol-last": [2, "always"],
     "object-curly-spacing": [2, "always", { "arraysInObjects": false }],
     "react/jsx-sort-props": [2, {

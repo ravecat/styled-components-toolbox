@@ -1,15 +1,8 @@
-/* @flow */
 import React from "react";
 import styled, { css } from "styled-components";
-import BaseComponent, { type BaseProps } from "common/components/BaseComponent";
+import BaseComponent from "common/components/BaseComponent";
 
-type ButtonProps = BaseProps & {
-  type?: string,
-  href?: string,
-  disabled?: boolean
-};
-
-const Button = ({ children, ...rest }: ButtonProps) => (
+const Button = ({ children, ...rest }) => (
   <Wrapper as="button" {...rest}>
     <span>{children}</span>
   </Wrapper>

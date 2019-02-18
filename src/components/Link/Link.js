@@ -1,14 +1,8 @@
-/* @flow */
 import React from "react";
 import styled from "styled-components";
-import BaseComponent, { type BaseProps } from "common/components/BaseComponent";
+import BaseComponent from "common/components/BaseComponent";
 
-type LinkProps = BaseProps & {
-  href?: string,
-  anchor?: boolean
-};
-
-const Link = ({ children, ...rest }: LinkProps) => (
+const Link = ({ children, ...rest }) => (
   <Wrapper as="a" {...rest}>
     <span>{children}</span>
   </Wrapper>

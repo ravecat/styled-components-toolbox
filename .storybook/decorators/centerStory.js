@@ -1,13 +1,12 @@
+// Use for centering story with preview-head.html
 import React from "react";
 import styled from "styled-components";
 
-const centerStory = storyFn => <Wrapper>{storyFn()}</Wrapper>;
-
-export default centerStory;
+export default storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
 const Wrapper = styled.div`
   display: flex;
+  height: 100%;
   align-items: center;
   justify-content: center;
-  padding-top: 40%;
 `;

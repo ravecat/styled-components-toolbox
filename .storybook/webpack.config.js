@@ -1,6 +1,9 @@
 const paths = require("../config/paths");
 
 module.exports = {
+  plugins: [
+    // your custom plugins
+  ],
   resolve: {
     modules: [paths.appNodeModules, paths.appSrc]
   },
@@ -15,5 +18,5 @@ module.exports = {
         }
       }
     ]
-  }
+  },
 };

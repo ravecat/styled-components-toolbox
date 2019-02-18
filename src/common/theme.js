@@ -1,29 +1,3 @@
-/* @flow */
-
-export type Theme = {
-  // colors
-  darkPrimaryColor: string,
-  lightPrimaryColor: string,
-  primaryColor: string,
-  primaryTextColor: string,
-  secondaryTextColor: string,
-  textColor: string,
-  accentColor: string,
-  dividerColor: string,
-
-  // fonts
-  fontFamily: string,
-  fontSize: number,
-  fontWeight: number,
-
-  // margings, sizes, borders
-  boxSizing: string,
-  border: number,
-  verticalAlign: string,
-  iconWidth: number,
-  iconHeight: number
-};
-
 export const theme: Theme = {
   // colors
   darkPrimaryColor: "#303F9F",

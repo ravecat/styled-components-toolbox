@@ -1,13 +1,6 @@
-/* @flow */
 import * as React from "react";
-import styled, { css, type ReactComponentStyled } from "styled-components";
-import { theme, type Theme } from "common/theme";
-
-export type BaseProps = {
-  children?: React.Node,
-  theme?: Theme,
-  as?: string
-};
+import styled, { css } from "styled-components";
+import { theme } from "common/theme";
 
 export const baseStyles = css`
   margin: 0;
@@ -19,7 +12,7 @@ export const baseStyles = css`
   font-weight: ${theme.fontWeight};
 `;
 
-const BaseComponent: ReactComponentStyled<BaseProps> = styled.div`
+const BaseComponent = styled.div`
   ${baseStyles}
   
   * {
