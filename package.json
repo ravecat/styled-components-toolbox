@@ -110,7 +110,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "rollup -c",
-    "test": "node scripts/test.js --env=jsdom",
+    "test": "jest",
     "lint:eslint": "eslint 'src/**/*.{js,jsx}'",
     "lint:stylelint": "stylelint 'src/**/*.{js,jsx,css}'",
     "prettier": "prettier --write 'src/**/*.{js,jsx,json,css,md}'",
