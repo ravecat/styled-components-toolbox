@@ -6,6 +6,7 @@ import commonjs from "rollup-plugin-commonjs";
 import babel from "rollup-plugin-babel";
 import sourceMaps from "rollup-plugin-sourcemaps";
 import svg from "rollup-plugin-svg";
+import { uglify } from "rollup-plugin-uglify";
 
 const commonPlugins = [
   peerDepsExternal(),
@@ -18,9 +19,12 @@ const commonPlugins = [
   svg(),
   babel({
     exclude: "node_modules/**",
-    plugins: [
-      'external-helpers'
-    ]
+    // Enable that options https://github.com/rollup/rollup-plugin-babel#helpers return error
+    // plugins: [
+    //   "@babel/plugin-external-helpers"
+    // ],
+    // externalHelpers: true,
+    runtimeHelpers: true
   }),
   commonjs({
     include: 'node_modules/**',
@@ -36,7 +40,8 @@ const commonPlugins = [
       "react-dom": ["render"],
       "react-is": ["isElement", "isValidElementType", "ForwardRef"]
     }
-  })
+  }),
+  uglify()
 ];
 
 const globals = { react: "React", "react-dom": "ReactDOM" };
@@ -49,7 +54,7 @@ const configBase = {
 const standaloneBaseConfig = {
   ...configBase,
   output: {
-    file: "dist/styled-components-toolbox.js",
+    file: "dist/index.js",
     format: "cjs",
     name: "styled-components-toolbox",
     globals,
