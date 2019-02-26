@@ -122,9 +122,9 @@
     "build-storybook": "build-storybook"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": [
-      "eslint --fix",
-      "stylelint",
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "yarn lint:eslint --fix",
+      "yarn lint:stylelint --fix",
       "git add"
     ]
   }
