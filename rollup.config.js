@@ -56,7 +56,6 @@ const standaloneBaseConfig = {
   output: {
     file: "dist/index.js",
     format: "cjs",
-    name: "styled-components-toolbox",
     globals,
     sourcemap: true
   },

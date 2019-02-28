@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/ravecat/styled-components-toolbox/issues"
   },
-  "main": "dist/styled-components-toolbox.js",
+  "main": "dist/index.js",
   "files": [
     "dist"
   ],
