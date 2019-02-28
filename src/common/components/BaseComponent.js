@@ -1,8 +1,8 @@
-import * as React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { theme } from "common/theme";
 
-export const baseStyles = css`
+
+const BaseComponent = styled.div`
   margin: 0;
   padding: 0;
   box-sizing: ${theme.boxSizing};
@@ -10,22 +10,10 @@ export const baseStyles = css`
   font-family: ${theme.fontFamily};
   font-size: ${theme.fontSize}px;
   font-weight: ${theme.fontWeight};
-`;
 
-const BaseComponent = styled.div`
-  ${baseStyles}
-  
-  * {
-    ${baseStyles}
-    
-    [hidden] {
-      display: none !important;
-    }
-
-    li {
-      list-style-type: none;
-    }
+  [hidden] {
+    display: none !important;
   }
 `;
 
-export default BaseComponent;
+export default BaseComponent

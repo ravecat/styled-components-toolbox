@@ -3,6 +3,6 @@
 exports[`<Icon> renders correctly 1`] = `
 <img
   alt="icon"
-  className="sc-bdVaJa lgYwpm"
+  className="sc-bdVaJa iSYYJB"
 />
 `;

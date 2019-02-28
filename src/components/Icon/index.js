@@ -1,4 +1,3 @@
-import { withTheme } from "common/services";
 import Icon from "./Icon";
 
-export default withTheme(Icon);
+export default Icon;

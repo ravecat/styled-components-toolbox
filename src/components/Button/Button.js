@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { theme } from "common/theme";
 import BaseComponent from "common/components/BaseComponent";
 
 const Button = ({ children, ...rest }) => (
@@ -8,8 +9,8 @@ const Button = ({ children, ...rest }) => (
   </Wrapper>
 );
 
-const Wrapper = styled(BaseComponent).attrs(props => ({
-  type: props.type || "button"
+const Wrapper = styled(BaseComponent).attrs(({ type = "button" }) => ({
+  type
 }))`
   display: inline-block;
   height: 32px;
@@ -20,26 +21,24 @@ const Wrapper = styled(BaseComponent).attrs(props => ({
   cursor: pointer;
   outline: 0;
   white-space: nowrap;
-  color: ${({ theme }) => theme.textColor};
-  background: ${({ theme }) => theme.primaryColor};
-  border: 1px solid ${({ theme }) => theme.primaryColor};
+  color: ${theme.textColor};
+  background: ${theme.primaryColor};
+  border: 1px solid ${theme.primaryColor};
   border-radius: 0;
 
-  :hover {
-    background: ${({ theme }) => theme.textColor};
-    color: ${({ theme }) => theme.primaryColor};
+  &:hover {
+    background: ${theme.textColor};
+    color: ${theme.primaryColor};
   }
 
-  ${({ disabled }) =>
-    disabled &&
-    css`
-      && {
-        cursor: default;
-        background: ${({ theme }) => theme.textColor};
-        border-color: ${({ theme }) => theme.dividerColor};
-        color: ${({ theme }) => theme.dividerColor};
-      }
-    `};
+  ${({ disabled }) => disabled && css`
+    && {
+      cursor: default;
+      background: ${theme.textColor};
+      border-color: ${theme.dividerColor};
+      color: ${theme.dividerColor};
+    }
+  `};
 `;
 
 export default Button;

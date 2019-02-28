@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { theme } from "common/theme";
 import BaseComponent from "common/components/BaseComponent";
 import CollapseIcon from "./components/CollapseIcon";
 
@@ -32,8 +33,8 @@ const Wrapper = styled(BaseComponent)`
 const HeaderWrapper = styled.div`
   display: table;
   padding: 12px;
-  color: ${({ theme }) => theme.textColor};
-  background-color: ${({ theme }) => theme.primaryColor};
+  color: ${theme.textColor};
+  background-color: ${theme.primaryColor};
 `;
 
 const Header = styled.div`

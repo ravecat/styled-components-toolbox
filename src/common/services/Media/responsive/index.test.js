@@ -1,6 +1,5 @@
 import { css } from "styled-components";
 import responsive from "./index";
-import trimSpace from "../services/trimSpace";
 
 const value = `
   width:auto;
@@ -8,6 +7,7 @@ const value = `
   padding: 10px;
 `;
 const resolution = "1600";
+const trimSpace = str => str.toString().replace(/[\s]/gi, "");
 
 describe("Media responsive", () => {
   test("get value", () => {

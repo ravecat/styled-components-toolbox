@@ -121,21 +121,22 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "NODE_ENV=production rollup -c",
-    "test": "jest",
-    "lint:eslint": "eslint 'src/**/*.{js,jsx}'",
-    "lint:stylelint": "stylelint 'src/**/*.{js,jsx,css}'",
-    "prettier": "prettier --write 'src/**/*.{js,jsx,json,css,md}'",
+    "test": "jest --passWithNoTests",
+    "lint:eslint": "eslint '**/*.{js,jsx}'",
+    "lint:stylelint": "stylelint '**/*.{js,jsx,css}'",
+    "prettier": "prettier --write '**/*.{js,jsx,json,css,md}'",
     "lint": "yarn lint:eslint && yarn lint:stylelint",
     "lint:fix": "yarn lint:eslint --fix && yarn lint:stylelint --fix",
     "precommit": "lint-staged",
     "prettier-watch": "onchange '**/*.{js,jsx,ts,tsx,json,css,md}' -- prettier --write {{changed}}",
-    "storybook": "start-storybook -p 9000",
+    "storybook": "start-storybook -p 9000 -c storybook",
     "build-storybook": "build-storybook"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": [
+    "**/*.{js,jsx,ts,tsx}": [
       "yarn lint:eslint --fix",
       "yarn lint:stylelint --fix",
+      "yarn test",
       "git add"
     ]
   }

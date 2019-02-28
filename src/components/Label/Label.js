@@ -6,11 +6,11 @@ const Label = styled(BaseComponent).attrs(({ labelFor }) => ({
   as: "label"
 }))`
   ${({ uppercase }) => uppercase && css`
-      text-transform: uppercase;
-    `};
+    text-transform: uppercase;
+  `};
   ${({ bold }) => bold && css`
-      font-weight: 700;
-    `};
+    font-weight: 700;
+  `};
 `;
 
 export default Label;

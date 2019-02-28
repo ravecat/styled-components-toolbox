@@ -1,5 +1,5 @@
-import { type ComponentType } from "react";
 import styled, { css } from "styled-components";
+import { theme } from "common/theme";
 import Link from "components/Link";
 
 const ButtonLink = styled(Link)`
@@ -10,23 +10,23 @@ const ButtonLink = styled(Link)`
   text-decoration: none;
   letter-spacing: normal;
   cursor: pointer;
-  color: ${({ theme }) => theme.textColor};
-  background: ${({ theme }) => theme.primaryColor};
-  border: 1px solid ${({ theme }) => theme.primaryColor};
+  color: ${theme.textColor};
+  background: ${theme.primaryColor};
+  border: 1px solid ${theme.primaryColor};
   border-radius: 0;
 
   :hover {
-    background: ${({ theme }) => theme.textColor};
-    color: ${({ theme }) => theme.primaryColor};
+    background: ${theme.textColor};
+    color: ${theme.primaryColor};
   }
 
   ${({ disabled }) =>
     disabled &&
     css`
       cursor: default;
-      background: ${({ theme }) => theme.textColor};
-      border-color: ${({ theme }) => theme.dividerColor};
-      color: ${({ theme }) => theme.dividerColor};
+      background: ${theme.textColor};
+      border-color: ${theme.dividerColor};
+      color: ${theme.dividerColor};
       pointer-events: none;
     `};
 `;
