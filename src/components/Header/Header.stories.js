@@ -10,7 +10,10 @@ storiesOf("Header", module)
   .add("Default", () => (
     <Header
       bold={boolean("bold", false)}
+      italic={boolean("italic", false)}
+      size={select("size", [6, 10, 14, 18, 22, 26], 14)}
       tag={select("tag", OPTIONS, DEFAULT_TAG)}
+      underline={boolean("underline", false)}
       uppercase={boolean("uppecase", false)}
     >
       {text("value", "Header")}

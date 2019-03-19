@@ -121,7 +121,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "NODE_ENV=production rollup -c",
-    "test": "jest --passWithNoTests",
+    "test": "jest '**/*.{js,jsx,ts,tsx}' --passWithNoTests",
     "lint:eslint": "eslint '**/*.{js,jsx}'",
     "lint:stylelint": "stylelint '**/*.{js,jsx,css}'",
     "prettier": "prettier --write '**/*.{js,jsx,json,css,md}'",
