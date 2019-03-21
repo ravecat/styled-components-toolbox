@@ -33,6 +33,7 @@
   },
   "rules": {
     "eol-last": [2, "always"],
+    "no-console": [2, { "allow": ["warn", "error"] }],
     "object-curly-spacing": [2, "always", { "arraysInObjects": false }],
     "react/jsx-sort-props": [2, {
       "noSortAlphabetically": false

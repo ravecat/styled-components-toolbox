@@ -1,32 +1,52 @@
-import { css } from "styled-components";
 import responsive from "./index";
 
-const value = `
-  width:auto;
-  height: 100%;
-  padding: 10px;
-`;
-const resolution = "1600";
-const trimSpace = str => str.toString().replace(/[\s]/gi, "");
-
 describe("Media responsive", () => {
-  test("get value", () => {
-    const expected = trimSpace(css`
-      @media (max-width: ${resolution}px) {
-        ${value};
+  // Use trim space because of specific templated string handling
+  const trim = str => str.replace(/[\s]/gi, "");
+
+  const properties = [
+    'height:100px;',
+    'height:200px;',
+    'height:300px;',
+    'height:400px;'
+  ]
+  const resolutions = [1000, 2000, 3000];
+
+  it("handle properties >= resolutions + 1", () => {
+    const expected = trim(`
+      @media (max-width: 1000px) {
+        height: 100px;
+      }
+      @media (min-width:1000px) and (max-width: 2000px) {
+        height: 200px;
+      }
+      @media (min-width:2000px) and (max-width: 3000px) {
+        height: 300px;
+      }
+      @media (min-width: 3000px) {
+        height: 400px;
       }
     `);
 
-    expect(trimSpace(responsive(value, resolution))).toEqual(expected);
+    expect(trim(responsive(properties, resolutions))).toEqual(expected);
   });
 
-  test("get value without responsive size", () => {
-    const expected = trimSpace(css`
-      @media (max-width: ${1023}px) {
-        ${value};
+  it("handle properties < resolutions + 1", () => {
+    const expected = trim(`
+      @media (max-width: 1000px) {
+        height:100px;
+      }
+      @media (min-width:1000px) and (max-width: 2000px) {
+        height:200px;
+      }
+      @media (min-width:2000px) and (max-width: 3000px) {
+        height:300px;
+      }
+      @media (min-width: 3000px) {
+        height:300px;
       }
     `);
 
-    expect(trimSpace(responsive(value))).toEqual(expected);
+    expect(trim(responsive(properties.slice(0,3), resolutions))).toEqual(expected);
   });
 });
