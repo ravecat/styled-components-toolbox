@@ -18,6 +18,7 @@ export const theme = {
   boxSizing: "border-box",
   border: 0,
   verticalAlign: "baseline",
+  lineHeight: 1,
   iconWidth: 30,
   iconHeight: 30
 };

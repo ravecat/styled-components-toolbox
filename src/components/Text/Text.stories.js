@@ -8,6 +8,7 @@ storiesOf("Text", module)
     <Text
       bold={boolean("bold", false)}
       italic={boolean("italic", false)}
+      lheight={select("lheight", [0.5, 1, 1.5, 2], 1)}
       size={select("size", [6, 10, 14, 18, 22, 26], 14)}
       underline={boolean("underline", false)}
       uppercase={boolean("uppecase", false)}
