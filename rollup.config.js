@@ -19,11 +19,6 @@ const commonPlugins = [
   svg(),
   babel({
     exclude: "node_modules/**",
-    // Enable that options https://github.com/rollup/rollup-plugin-babel#helpers return error
-    // plugins: [
-    //   "@babel/plugin-external-helpers"
-    // ],
-    // externalHelpers: true,
     runtimeHelpers: true
   }),
   commonjs({
