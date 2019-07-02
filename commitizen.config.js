@@ -4,24 +4,24 @@ module.exports = {
       value: "build",
       name: "build: Build a project or change external dependencies"
     },
-    { value: "ci", name: "ci: Configuring CI and working with scripts" },
+    { value: "ci", name: "ci: Configure CI and working with scripts" },
     { value: "docs", name: "docs: Updating docs" },
-    { value: "feat", name: "feat: Adding new functionality" },
+    { value: "feat", name: "feat: Add new functionality" },
     { value: "fix", name: "fix: Fix bugs" },
     {
       value: "perf",
-      name: "perf: Optimixe perfomance"
+      name: "perf: Optimize perfomance"
     },
     {
       value: "refactor",
-      name: "refactor: Editing the code without correcting bugs or adding new features"
+      name: "refactor: Edit the code without correcting bugs or adding new features"
     },
     { value: "revert", name: "revert: Rollback to previous commits " },
     {
       value: "style",
-      name:  "style: Updating according to style guide (tabs, indents, points, commas, etc)"
+      name:  "style: Update according to style guide (tabs, indents, points, commas, etc)"
     },
-    { value: "test", name: "test: Adding tests" }
+    { value: "test", name: "test: Add tests" }
   ],
 
   scopes: [
@@ -30,6 +30,7 @@ module.exports = {
     { name: 'localization' },
     { name: 'selectors' },
     { name: 'middlewares' },
+    { name: 'scripts' },
   ],
   messages: {
     type: "What changes do you make?",

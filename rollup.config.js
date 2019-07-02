@@ -1,60 +1,44 @@
-import nodeResolve from "rollup-plugin-node-resolve";
+import resolve from "rollup-plugin-node-resolve";
 import includePaths from 'rollup-plugin-includepaths';
 import json from 'rollup-plugin-json';
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import commonjs from "rollup-plugin-commonjs";
 import babel from "rollup-plugin-babel";
 import sourceMaps from "rollup-plugin-sourcemaps";
 import svg from "rollup-plugin-svg";
 import { uglify } from "rollup-plugin-uglify";
 
-const commonPlugins = [
-  peerDepsExternal(),
+const plugins = [
   sourceMaps(),
   json(),
   includePaths({
     paths: ['src'],
   }),
-  nodeResolve(),
-  svg(),
+  resolve({
+    customResolveOptions: {
+      moduleDirectory: 'node_modules'
+    }
+  }),
   babel({
     exclude: "node_modules/**",
     runtimeHelpers: true
   }),
-  commonjs({
-    include: 'node_modules/**',
-    namedExports: {
-      react: [
-        "cloneElement",
-        "createFactory",
-        "Component",
-        "PropTypes",
-        "createElement",
-        "createContext"
-      ],
-      "react-dom": ["render"],
-      "react-is": ["isElement", "isValidElementType", "ForwardRef"]
-    }
-  }),
+  commonjs(),
+  svg(),
   uglify()
 ];
 
-const globals = { react: "React", "react-dom": "ReactDOM" };
-
-const configBase = {
+export default {
   input: "./src/index.js",
-  plugins: commonPlugins
-};
-
-const standaloneBaseConfig = {
-  ...configBase,
+  /* 
+  Exclude modules from bundle according to
+  https://rollupjs.org/guide/en/#peer-dependencies
+  https://www.styled-components.com/docs/faqs#marking-styledcomponents-as-external-in-your-package-dependencies
+  */
+  external: ['react', 'styled-components'],
   output: {
     file: "dist/index.js",
     format: "cjs",
-    globals,
     sourcemap: true
   },
-  plugins: configBase.plugins
+  plugins
 };
-
-export default standaloneBaseConfig;
