@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   types: [
     {
       value: "build",
@@ -16,7 +16,7 @@ module.exports = {
       value: "refactor",
       name: "refactor: Edit the code without correcting bugs or adding new features"
     },
-    { value: "revert", name: "revert: Rollback to previous commits " },
+    { value: "revert", name: "revert: Rollback to previous commits" },
     {
       value: "style",
       name:  "style: Update according to style guide (tabs, indents, points, commas, etc)"
@@ -42,7 +42,6 @@ module.exports = {
     confirmCommit: "Are you satisfied with the resulting commit?"
   },
   allowCustomScopes: true,
-  allowBreakingChanges: false,
   footerPrefix: "META:",
   subjectLimit: 72
 };

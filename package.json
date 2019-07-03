@@ -19,22 +19,26 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ravecat/styled-components-toolbox"
+    "url": "https://gitlab.com/ravecat/styled-components-toolbox.git"
   },
   "bugs": {
-    "url": "https://github.com/ravecat/styled-components-toolbox/issues"
+    "url": "https://gitlab.com/ravecat/styled-components-toolbox/issues"
   },
   "main": "dist/index.js",
   "files": [
     "dist"
   ],
   "dependencies": {
-    "recompose": "^0.30.0"
+    "recompose": "^0.30.0",
+    "remove": "^0.1.5"
   },
   "devDependencies": {
     "@babel/core": "7.2.2",
     "@commitlint/cli": "^8.0.0",
-    "@commitlint/config-conventional": "^8.0.0",
+    "@commitlint/config-angular": "^8.0.0",
+    "@semantic-release/changelog": "^3.0.4",
+    "@semantic-release/git": "^7.0.16",
+    "@semantic-release/gitlab": "^3.1.7",
     "@storybook/addon-actions": "^4.1.12",
     "@storybook/addon-knobs": "^4.1.12",
     "@storybook/addon-links": "^4.1.12",
@@ -129,7 +133,8 @@
     "lint": "yarn lint:eslint && yarn lint:stylelint",
     "lint:fix": "yarn lint:eslint --fix && yarn lint:stylelint --fix",
     "precommit": "lint-staged",
-    "storybook": "start-storybook -p 9000 -c storybook"
+    "storybook": "start-storybook -p 9000 -c storybook",
+    "release:debug": "semantic-release --debug"
   },
   "husky": {
     "hooks": {

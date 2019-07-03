@@ -1,0 +1,35 @@
+stages:
+  - test
+  - release
+
+test:
+  image: node:10.13-alpine
+  stage: test
+  tags:
+    - docker
+  cache:
+    paths:
+    - node_modules/
+  dependencies: []
+  script:
+    - npm i -g yarn 
+    - yarn
+    - yarn lint
+    - yarn test
+
+publish:
+  image: node:10.13-alpine
+  stage: release
+  tags:
+    - docker
+  cache:
+    paths:
+    - node_modules/
+  only:
+    - master
+  script:
+    - npm i -g yarn 
+    - yarn
+    - apk add --no-cache git
+    - GITLAB_TOKEN=$GITLAB_TOKEN yarn semantic-release
+
