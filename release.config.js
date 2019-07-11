@@ -26,8 +26,11 @@ module.exports = {
       '@semantic-release/git',
       {
         assets: ['CHANGELOG.md', 'package.json'],
-        message: "build(release): ${nextRelease.version}\n${new Date().toLocaleDateString('en-US', {year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' }\n\n${nextRelease.notes}",
+        message: "build(release): ${nextRelease.version}[skip ci]\n${nextRelease.notes}"
       },
-    ]
+    ],
+    ["@semantic-release/gitlab", {
+      gitlabUrl: "https://gitlab.instinctools.com"
+    }]
   ]
 }
