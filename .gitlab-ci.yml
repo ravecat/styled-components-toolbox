@@ -1,15 +1,18 @@
 stages:
   - test
   - release
+  - deploy
+
+image: node:10.13-alpine
+
+cache:
+  paths:
+  - node_modules/
 
 test:
-  image: node:10.13-alpine
   stage: test
   tags:
     - docker
-  cache:
-    paths:
-    - node_modules/
   dependencies: []
   script:
     - npm i -g yarn 
@@ -18,13 +21,9 @@ test:
     - yarn test
 
 publish:
-  image: node:10.13-alpine
   stage: release
   tags:
     - docker
-  cache:
-    paths:
-    - node_modules/
   only:
     - master
   script:
@@ -32,4 +31,19 @@ publish:
     - yarn
     - apk add --no-cache git
     - GITLAB_TOKEN=$GITLAB_TOKEN yarn semantic-release
+
+storybook:
+  stage: deploy
+  tags:
+    - docker
+  only:
+    - master
+  script:
+    - apk add py-pip
+    - apk add python-dev libffi-dev openssl-dev gcc libc-dev make
+    - pip install --upgrade pip
+    - pip install docker-compose
+    - sudo docker image prune -f
+    - sudo docker-compose build --no-cache
+    - sudo docker-compose up -d
 

@@ -125,7 +125,6 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "NODE_ENV=production rollup -c",
-    "build:storybook": "build-storybook",
     "test": "jest --passWithNoTests",
     "lint:eslint": "eslint '**/*.{js,jsx}'",
     "lint:stylelint": "stylelint '**/*.{js,jsx,css}'",
@@ -134,6 +133,7 @@
     "lint:fix": "yarn lint:eslint --fix && yarn lint:stylelint --fix",
     "precommit": "lint-staged",
     "storybook": "start-storybook -p 9000 -c storybook",
+    "storybook:build": "build-storybook -c storybook -o ./storybook_build",
     "release:debug": "semantic-release --debug"
   },
   "husky": {
