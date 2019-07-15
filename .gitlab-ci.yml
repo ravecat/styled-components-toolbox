@@ -14,6 +14,10 @@ test:
   tags:
     - docker
   dependencies: []
+  artifacts:
+    paths:
+      - node_modules/
+    expire_in: 1h
   script:
     - npm i -g yarn 
     - yarn
@@ -26,9 +30,10 @@ publish:
     - docker
   only:
     - master
+  dependencies:
+    - test
   script:
     - npm i -g yarn 
-    - yarn
     - apk add --no-cache git
     - GITLAB_TOKEN=$GITLAB_TOKEN yarn semantic-release
 
