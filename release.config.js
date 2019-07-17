@@ -29,8 +29,6 @@ module.exports = {
         message: "build(release): ${nextRelease.version}[skip ci]\n${nextRelease.notes}"
       },
     ],
-    ["@semantic-release/gitlab", {
-      gitlabUrl: "https://gitlab.instinctools.com"
-    }]
+    "@semantic-release/gitlab"
   ]
 }
