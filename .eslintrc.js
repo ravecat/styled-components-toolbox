@@ -34,7 +34,6 @@ module.exports = {
   "rules": {
     "eol-last": [2, "always"],
     "no-console": [2, { "allow": ["warn", "error"] }],
-    "object-curly-spacing": [2, "always", { "arraysInObjects": false }],
     "no-multiple-empty-lines": [2, { "max": 1 }],
     "react/jsx-sort-props": [2, {
       "noSortAlphabetically": false

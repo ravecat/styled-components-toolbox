@@ -14,23 +14,25 @@ module.exports = {
     },
     {
       value: "refactor",
-      name: "refactor: Edit the code without correcting bugs or adding new features"
+      name:
+        "refactor: Edit the code without correcting bugs or adding new features"
     },
     { value: "revert", name: "revert: Rollback to previous commits" },
     {
       value: "style",
-      name:  "style: Update according to style guide (tabs, indents, points, commas, etc)"
+      name:
+        "style: Update according to style guide (tabs, indents, points, commas, etc)"
     },
     { value: "test", name: "test: Add tests" }
   ],
 
   scopes: [
-    { name: 'components' },
-    { name: 'containers' },
-    { name: 'localization' },
-    { name: 'selectors' },
-    { name: 'middlewares' },
-    { name: 'scripts' },
+    { name: "components" },
+    { name: "containers" },
+    { name: "localization" },
+    { name: "selectors" },
+    { name: "middlewares" },
+    { name: "scripts" }
   ],
   messages: {
     type: "What changes do you make?",
@@ -45,4 +47,3 @@ module.exports = {
   footerPrefix: "META:",
   subjectLimit: 72
 };
-

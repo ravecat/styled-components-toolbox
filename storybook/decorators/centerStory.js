@@ -2,11 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export default storyFn => (
-  <Wrapper>
-    {storyFn()}
-  </Wrapper>
-)
+export default storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
 const Wrapper = styled.div`
   display: flex;

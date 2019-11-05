@@ -5,11 +5,11 @@ describe("Media responsive", () => {
   const trim = str => str.replace(/[\s]/gi, "");
 
   const properties = [
-    'height:100px;',
-    'height:200px;',
-    'height:300px;',
-    'height:400px;'
-  ]
+    "height:100px;",
+    "height:200px;",
+    "height:300px;",
+    "height:400px;"
+  ];
   const resolutions = [1000, 2000, 3000];
 
   it("handle properties >= resolutions + 1", () => {
@@ -47,6 +47,8 @@ describe("Media responsive", () => {
       }
     `);
 
-    expect(trim(responsive(properties.slice(0,3), resolutions))).toEqual(expected);
+    expect(trim(responsive(properties.slice(0, 3), resolutions))).toEqual(
+      expected
+    );
   });
 });

@@ -1,6 +1,6 @@
 import resolve from "rollup-plugin-node-resolve";
-import includePaths from 'rollup-plugin-includepaths';
-import json from 'rollup-plugin-json';
+import includePaths from "rollup-plugin-includepaths";
+import json from "rollup-plugin-json";
 import commonjs from "rollup-plugin-commonjs";
 import babel from "rollup-plugin-babel";
 import sourceMaps from "rollup-plugin-sourcemaps";
@@ -11,11 +11,11 @@ const plugins = [
   sourceMaps(),
   json(),
   includePaths({
-    paths: ['src'],
+    paths: ["src"]
   }),
   resolve({
     customResolveOptions: {
-      moduleDirectory: 'node_modules'
+      moduleDirectory: "node_modules"
     }
   }),
   babel({
@@ -34,7 +34,7 @@ export default {
   https://rollupjs.org/guide/en/#peer-dependencies
   https://www.styled-components.com/docs/faqs#marking-styledcomponents-as-external-in-your-package-dependencies
   */
-  external: ['react', 'styled-components'],
+  external: ["react", "styled-components"],
   output: {
     file: "dist/index.js",
     format: "cjs",

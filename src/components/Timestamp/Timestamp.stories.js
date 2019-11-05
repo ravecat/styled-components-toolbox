@@ -13,10 +13,9 @@ const OPTIONS = [
   "2014-06-08T21:48:51+00:00"
 ];
 
-storiesOf("Timestamp", module)
-  .add("Default", () => (
-    <Timestamp
-      mask={text("mask", "bDYt")}
-      value={select("value", OPTIONS, DEFAULT)}
-    />
-  ));
+storiesOf("Timestamp", module).add("Default", () => (
+  <Timestamp
+    mask={text("mask", "bDYt")}
+    value={select("value", OPTIONS, DEFAULT)}
+  />
+));

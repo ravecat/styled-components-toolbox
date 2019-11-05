@@ -15,4 +15,4 @@ const BaseComponent = styled.div`
   }
 `;
 
-export default BaseComponent
+export default BaseComponent;

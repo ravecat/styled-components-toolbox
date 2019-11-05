@@ -31,14 +31,16 @@ const Wrapper = styled(BaseComponent).attrs(({ type = "button" }) => ({
     color: ${theme.primaryColor};
   }
 
-  ${({ disabled }) => disabled && css`
-    && {
-      cursor: default;
-      background: ${theme.textColor};
-      border-color: ${theme.dividerColor};
-      color: ${theme.dividerColor};
-    }
-  `};
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      && {
+        cursor: default;
+        background: ${theme.textColor};
+        border-color: ${theme.dividerColor};
+        color: ${theme.dividerColor};
+      }
+    `};
 `;
 
 export default Button;

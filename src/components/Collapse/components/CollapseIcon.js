@@ -3,10 +3,7 @@ import styled from "styled-components";
 import Icon from "components/Icon";
 import { upArrow, downArrow } from "common/assets";
 
-const CollapseIcon = ({
-  condition,
-  onClick
-}) => (
+const CollapseIcon = ({ condition, onClick }) => (
   <CustomIcon
     alternative={upArrow}
     asset={downArrow}

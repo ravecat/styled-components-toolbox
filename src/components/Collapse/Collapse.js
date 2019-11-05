@@ -4,13 +4,7 @@ import { theme } from "common/theme";
 import BaseComponent from "common/components/BaseComponent";
 import CollapseIcon from "./components/CollapseIcon";
 
-const Collapse = ({
-  children,
-  header,
-  condition,
-  handleClick,
-  ...rest
-}) =>
+const Collapse = ({ children, header, condition, handleClick, ...rest }) => (
   <Wrapper {...rest}>
     <HeaderWrapper {...rest}>
       <Header>{header}</Header>
@@ -20,6 +14,7 @@ const Collapse = ({
       {children}
     </Content>
   </Wrapper>
+);
 
 export default Collapse;
 
@@ -46,7 +41,8 @@ const Header = styled.div`
 const Content = styled.div`
   padding: 12px;
 
-  ${({ condition }) => !condition &&
+  ${({ condition }) =>
+    !condition &&
     css`
       display: none;
     `};
