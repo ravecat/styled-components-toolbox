@@ -79,11 +79,20 @@ const Wrapper = styled(BaseComponent).attrs(({ type = "button" }) => ({
       }
     `};
 
+  ${({ block }) =>
+    block &&
+    css`
+      && {
+        display: block;
+        width: 100%;
+      }
+    `};
+
   ${({ link }) =>
     link &&
     css`
       && {
-        background-color: transparent;
+        background: rgba(0, 0, 0, 0);
         border: 0;
         color: ${theme.primaryColor};
         text-decoration: underline;

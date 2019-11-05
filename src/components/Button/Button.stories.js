@@ -6,6 +6,7 @@ import Button from "./index";
 
 storiesOf("Button", module).add("Default", () => (
   <Button
+    block={boolean("block", false)}
     dashed={boolean("dashed", false)}
     disabled={boolean("disabled", false)}
     href={text("href")}
