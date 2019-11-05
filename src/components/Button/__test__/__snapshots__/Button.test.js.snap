@@ -2,12 +2,13 @@
 
 exports[`<Button> renders correctly 1`] = `
 <button
-  className="sc-bdVaJa sc-bxivhb erLiHP"
+  className="sc-bdVaJa sc-ifAKCX cWodIP"
   type="button"
 >
-  <span>
-    Button
-  </span>
+  <i
+    className="sc-EHOje iclRlG"
+  />
+  Button
 </button>
 `;
 

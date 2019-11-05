@@ -2,10 +2,12 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { theme } from "common/theme";
 import BaseComponent from "common/components/BaseComponent";
+import Icon from "../Icon";
 
-const Button = ({ children, ...rest }) => (
+const Button = ({ children, icon, ...rest }) => (
   <Wrapper as="button" {...rest}>
-    <span>{children}</span>
+    <IconWrapper>{icon ? <Icon asset={icon} /> : null}</IconWrapper>
+    {children}
   </Wrapper>
 );
 
@@ -111,6 +113,15 @@ const Wrapper = styled(BaseComponent).attrs(({ type = "button" }) => ({
         background: transparent;
       }
     `};
+`;
+
+const IconWrapper = styled.i`
+  ${Icon} {
+    width: 14px;
+    height: 14px;
+    margin-right: 8px;
+    vertical-align: -1.75px;
+  }
 `;
 
 export default Button;

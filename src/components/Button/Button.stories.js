@@ -11,6 +11,7 @@ storiesOf("Button", module).add("Default", () => (
     disabled={boolean("disabled", false)}
     ghost={boolean("ghost", false)}
     href={text("href")}
+    icon={text("icon")}
     link={boolean("link", false)}
     onClick={action("clicked")}
     primary={boolean("primary", false)}
