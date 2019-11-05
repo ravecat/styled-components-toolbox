@@ -4,7 +4,7 @@ module.exports = {
     "plugin:jest/recommended",
     "plugin:jsx-a11y/strict",
     "eslint:recommended",
-    "prettier"
+    "plugin:prettier/recommended"
   ],
   "plugins": [
     "import",
