@@ -29,6 +29,7 @@
     "dist"
   ],
   "dependencies": {
+    "@babel/runtime": "^7.7.1",
     "recompose": "^0.30.0"
   },
   "devDependencies": {
@@ -126,7 +127,7 @@
     "prebuild": "rimraf dist",
     "build": "NODE_ENV=production rollup -c",
     "test": "jest --passWithNoTests",
-    "lint:eslint": "eslint '**/*.{js,jsx}'",
+    "lint:eslint": "eslint \"**/*.{js,jsx}\"",
     "lint:stylelint": "stylelint '**/*.{js,jsx,css}'",
     "lint": "yarn lint:eslint && yarn lint:stylelint",
     "lint:fix": "yarn lint:eslint --fix && yarn lint:stylelint --fix",

@@ -6,9 +6,13 @@ import Button from "./index";
 
 storiesOf("Button", module).add("Default", () => (
   <Button
+    dashed={boolean("dashed", false)}
     disabled={boolean("disabled", false)}
     href={text("href")}
+    link={boolean("link", false)}
     onClick={action("clicked")}
+    primary={boolean("primary", false)}
+    rounded={boolean("rounded", false)}
   >
     {text("value", "Button")}
   </Button>

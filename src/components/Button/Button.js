@@ -41,6 +41,58 @@ const Wrapper = styled(BaseComponent).attrs(({ type = "button" }) => ({
         color: ${theme.dividerColor};
       }
     `};
+
+  ${({ primary }) =>
+    primary &&
+    css`
+      && {
+        background: ${theme.secondaryTextColor};
+      }
+
+      &:hover {
+        background: ${theme.primaryTextColor};
+        color: ${theme.textColor};
+      }
+    `};
+
+  ${({ dashed }) =>
+    dashed &&
+    css`
+      && {
+        background: ${theme.textColor};
+        border-color: ${theme.dividerColor};
+        border: 1px dashed ${theme.lightPrimaryColor};
+        color: ${theme.dividerColor};
+      }
+
+      &:hover {
+        border-color: ${theme.accentColor};
+        color: ${theme.accentColor};
+      }
+    `};
+
+  ${({ rounded }) =>
+    rounded &&
+    css`
+      && {
+        border-radius: 4px;
+      }
+    `};
+
+  ${({ link }) =>
+    link &&
+    css`
+      && {
+        background-color: transparent;
+        border: 0;
+        color: ${theme.primaryColor};
+        text-decoration: underline;
+      }
+
+      &:hover {
+        color: ${theme.accentColor};
+      }
+    `};
 `;
 
 export default Button;
