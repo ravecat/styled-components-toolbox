@@ -9,6 +9,7 @@ storiesOf("Button", module).add("Default", () => (
     block={boolean("block", false)}
     dashed={boolean("dashed", false)}
     disabled={boolean("disabled", false)}
+    ghost={boolean("ghost", false)}
     href={text("href")}
     link={boolean("link", false)}
     onClick={action("clicked")}

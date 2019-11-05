@@ -102,6 +102,14 @@ const Wrapper = styled(BaseComponent).attrs(({ type = "button" }) => ({
         color: ${theme.accentColor};
       }
     `};
+
+  ${({ ghost }) =>
+    ghost &&
+    css`
+      && {
+        background: rgba(0, 0, 0, 0);
+      }
+    `};
 `;
 
 export default Button;
