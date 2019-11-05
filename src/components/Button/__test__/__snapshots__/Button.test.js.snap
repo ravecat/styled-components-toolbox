@@ -2,7 +2,7 @@
 
 exports[`<Button> renders correctly 1`] = `
 <button
-  className="sc-bdVaJa sc-bxivhb dgjowA"
+  className="sc-bdVaJa sc-bxivhb erLiHP"
   type="button"
 >
   <span>
