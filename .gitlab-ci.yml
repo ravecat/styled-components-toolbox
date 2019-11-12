@@ -7,7 +7,7 @@ image: node:10.13-alpine
 
 cache:
   paths:
-  - node_modules/
+    - node_modules/
 
 test:
   stage: test
@@ -18,8 +18,11 @@ test:
     paths:
       - node_modules/
     expire_in: 1h
+  except:
+    - develop
+    - master
   script:
-    - npm i -g yarn 
+    - npm i -g yarn
     - yarn
     - yarn lint
     - yarn test
@@ -33,7 +36,7 @@ publish:
   dependencies:
     - test
   script:
-    - npm i -g yarn 
+    - npm i -g yarn
     - apk add --no-cache git
     - GITLAB_TOKEN=$GITLAB_TOKEN yarn semantic-release
 
@@ -51,4 +54,3 @@ storybook:
     - sudo docker image prune -f
     - sudo docker-compose build --no-cache
     - sudo docker-compose up -d
-
