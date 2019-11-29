@@ -1,8 +1,10 @@
 import React from "react";
 import styled, { css } from "styled-components";
+
+import CollapseIcon from "./components/CollapseIcon";
+
 import { theme } from "common/theme";
 import BaseComponent from "common/components/BaseComponent";
-import CollapseIcon from "./components/CollapseIcon";
 
 const Collapse = ({ children, header, condition, handleClick, ...rest }) => (
   <Wrapper {...rest}>

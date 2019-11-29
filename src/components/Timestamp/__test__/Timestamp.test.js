@@ -1,5 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
+
 import Timestamp from "../index";
 
 it("<Timestamp> renders correctly with Date object", () => {

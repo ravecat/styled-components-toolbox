@@ -1,6 +1,7 @@
 import React from "react";
 import { text, select } from "@storybook/addon-knobs";
 import { storiesOf } from "@storybook/react";
+
 import Timestamp from "./index";
 
 const DEFAULT = "2018-10-08T18:31:42";

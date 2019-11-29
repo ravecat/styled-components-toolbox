@@ -10,6 +10,18 @@ module.exports = {
     "import",
     "jsx-a11y"
   ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js"
+        ],
+        "paths": [
+          "src"
+        ]
+      }
+    }
+  },
   "env": {
     "browser": true,
     "es6": true
@@ -34,7 +46,7 @@ module.exports = {
   "rules": {
     "eol-last": [2, "always"],
     "no-console": [2, { "allow": ["warn", "error"] }],
-    "no-multiple-empty-lines": [2, { "max": 1 }],
+    "import/order": [2, {"newlines-between": "always"}],
     "react/jsx-sort-props": [2, {
       "noSortAlphabetically": false
     }],
@@ -47,6 +59,10 @@ module.exports = {
       "allowShortCircuit": true,
       "allowTernary": true,
       "allowTaggedTemplates": true
+    }],
+    "react/jsx-wrap-multilines": [2, {
+      "assignment": "parens-new-line",
+      "arrow": "parens-new-line"
     }]
   }
 }

@@ -6,7 +6,7 @@ export default storyFn => <Wrapper>{storyFn()}</Wrapper>;
 
 const Wrapper = styled.div`
   display: flex;
-  height: 100%;
+  padding: 20px;
   align-items: center;
   justify-content: center;
 `;

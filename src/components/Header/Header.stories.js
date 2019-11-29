@@ -1,6 +1,7 @@
 import React from "react";
 import { text, boolean, select } from "@storybook/addon-knobs";
 import { storiesOf } from "@storybook/react";
+
 import Header from "./index";
 
 const DEFAULT_TAG = "h1";

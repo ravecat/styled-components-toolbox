@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { theme } from "common/theme";
 
 const BaseComponent = styled.div`

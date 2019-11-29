@@ -1,6 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { text } from "@storybook/addon-knobs";
+
 import Collapse from "./index";
 
 const CONTENT = `The chemical compound isobutyl acetate, also known

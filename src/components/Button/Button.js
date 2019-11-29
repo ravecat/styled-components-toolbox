@@ -1,8 +1,10 @@
 import React from "react";
 import styled, { css } from "styled-components";
+
+import Icon from "../Icon";
+
 import { theme } from "common/theme";
 import BaseComponent from "common/components/BaseComponent";
-import Icon from "../Icon";
 
 const Button = ({ children, icon, ...rest }) => (
   <Wrapper as="button" {...rest}>

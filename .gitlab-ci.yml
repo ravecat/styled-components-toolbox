@@ -1,7 +1,11 @@
 stages:
+  - open_mr
+  - preparation
   - test
+  - close_mr
   - release
   - deploy
+  - cleaning
 
 image: node:10.13-alpine
 
@@ -9,11 +13,46 @@ cache:
   paths:
     - node_modules/
 
-test:
-  stage: test
+open_mr_dependabot:
+  image: node:10.13-alpine
+  stage: open_mr
   tags:
     - docker
+  only:
+    - /^dependabot.*$/
   dependencies: []
+  script:
+    - apk add --no-cache bash python3 curl git
+    - HOST=$CI_PROJECT_URL
+      CI_PROJECT_ID=$CI_PROJECT_ID
+      CI_COMMIT_REF_NAME=$CI_COMMIT_REF_NAME
+      GITLAB_USER_ID=$GITLAB_USER_ID
+      PRIVATE_TOKEN=$GITLAB_TOKEN
+      ./utils/open_mr_dependabot.sh
+
+close_mr_dependabot:
+  image: node:10.13-alpine
+  stage: close_mr
+  tags:
+    - docker
+  only:
+    - /^dependabot.*$/
+  dependencies: []
+  script:
+    - apk add --no-cache bash python3 curl
+    - HOST=$CI_PROJECT_URL
+      CI_PROJECT_ID=$CI_PROJECT_ID
+      CI_PROJECT_NAME=$CI_PROJECT_NAME
+      CI_COMMIT_REF_NAME=$CI_COMMIT_REF_NAME
+      GITHUB_OWNER=$GITHUB_OWNER
+      GITLAB_USER_ID=$GITLAB_USER_ID
+      PRIVATE_TOKEN=$GITLAB_TOKEN
+      GITHUB_TOKEN=$GITHUB_REPO_TOKEN
+      ./utils/close_mr_dependabot.sh
+
+build_deps:
+  image: node:10.13-alpine
+  stage: preparation
   artifacts:
     paths:
       - node_modules/
@@ -21,10 +60,36 @@ test:
   except:
     - develop
     - master
+  tags:
+    - docker
+  dependencies: []
   script:
-    - npm i -g yarn
+    - apk add --no-cache git
     - yarn
+
+test_lint:
+  stage: test
+  tags:
+    - docker
+  except:
+    - develop
+    - master
+  dependencies:
+    - build_deps
+  script:
     - yarn lint
+    - yarn prettier
+
+test_module:
+  stage: test
+  tags:
+    - docker
+  except:
+    - develop
+    - master
+  dependencies:
+    - build_deps
+  script:
     - yarn test
 
 publish:
@@ -34,7 +99,7 @@ publish:
   only:
     - master
   dependencies:
-    - test
+    - build_deps
   script:
     - npm i -g yarn
     - apk add --no-cache git
@@ -54,3 +119,15 @@ storybook:
     - sudo docker image prune -f
     - sudo docker-compose build --no-cache
     - sudo docker-compose up -d
+
+cleaning:
+  stage: cleaning
+  tags:
+    - shell
+  only:
+    - develop
+    - master
+  dependencies: []
+  script:
+    - docker info
+    - docker system prune -af

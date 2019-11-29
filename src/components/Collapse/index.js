@@ -1,4 +1,5 @@
 import { withState, withHandlers, compose } from "recompose";
+
 import Collapse from "./Collapse";
 
 export default compose(

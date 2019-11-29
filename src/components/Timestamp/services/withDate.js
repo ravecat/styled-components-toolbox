@@ -1,4 +1,5 @@
 import { withProps } from "recompose";
+
 import { MONTH, MONTH_NUMBER, WEEKDAY } from "./constant";
 
 export default withProps(({ value, mask = "bDYt" }) => {

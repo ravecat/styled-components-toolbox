@@ -1,6 +1,7 @@
 import { configure, addDecorator } from "@storybook/react";
 import { setOptions } from "@storybook/addon-options";
 import { withKnobs } from "@storybook/addon-knobs";
+
 import centerStory from "./decorators/centerStory";
 
 // automatically import all files ending in *.stories.js

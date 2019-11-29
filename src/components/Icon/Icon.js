@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+
 import { theme } from "common/theme";
 
 const Icon = styled.img.attrs(({ alternative, asset, condition, alt }) => ({

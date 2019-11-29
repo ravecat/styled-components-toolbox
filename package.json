@@ -130,11 +130,12 @@
     "lint:eslint": "eslint \"**/*.{js,jsx}\"",
     "lint:stylelint": "stylelint '**/*.{js,jsx,css}'",
     "lint": "yarn lint:eslint && yarn lint:stylelint",
-    "lint:fix": "yarn lint:eslint --fix && yarn lint:stylelint --fix",
+    "lint:fix": "yarn lint:eslint --fix && yarn lint:stylelint",
     "precommit": "lint-staged",
     "storybook": "start-storybook -p 9000 -c storybook",
     "storybook:build": "build-storybook -c storybook -o ./storybook_build",
-    "release:debug": "semantic-release --debug"
+    "release:debug": "semantic-release --debug",
+    "prettier": "prettier --check *.{css,md,yml,json}"
   },
   "husky": {
     "hooks": {
@@ -145,12 +146,15 @@
   "lint-staged": {
     "*.js": [
       "eslint --fix",
-      "stylelint --fix",
-      "yarn test",
+      "stylelint",
       "git add"
     ],
     "*.{css,md,yml,json}": [
       "prettier --write",
+      "git add"
+    ],
+    "*": [
+      "yarn test",
       "git add"
     ]
   },
