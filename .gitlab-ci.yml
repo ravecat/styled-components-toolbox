@@ -123,10 +123,9 @@ storybook:
 cleaning:
   stage: cleaning
   tags:
-    - shell
+    - docker
   only:
     - develop
-    - master
   dependencies: []
   script:
     - docker info
