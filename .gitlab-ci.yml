@@ -1,3 +1,5 @@
+image: docker:latest
+
 stages:
   - open_mr
   - preparation
@@ -6,8 +8,6 @@ stages:
   - release
   - deploy
   - cleaning
-
-image: node:10.13-alpine
 
 cache:
   paths:
@@ -68,6 +68,7 @@ build_deps:
     - yarn
 
 test_lint:
+  image: node:10.13-alpine
   stage: test
   tags:
     - docker
@@ -81,6 +82,7 @@ test_lint:
     - yarn prettier
 
 test_module:
+  image: node:10.13-alpine
   stage: test
   tags:
     - docker
