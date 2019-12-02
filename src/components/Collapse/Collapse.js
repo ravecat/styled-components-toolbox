@@ -3,7 +3,6 @@ import styled, { css } from "styled-components";
 
 import { theme } from "common/theme";
 import BaseComponent from "components/BaseComponent";
-import upArrow from "common/assets/up-arrow.svg";
 import downArrow from "common/assets/down-arrow.svg";
 
 export const Collapse = ({ children, summary, details }) => (
@@ -39,7 +38,7 @@ const Details = styled(BaseComponent)`
 
     &[open] ${Summary}:after {
       ${iconStyles};
-      background-image: url(${upArrow});
+      transform: rotate(180deg);
     }
   `};
 `;

@@ -2,7 +2,7 @@
 
 exports[`<Timestamp> renders correctly with Date object 1`] = `
 <span
-  className="sc-bdVaJa sc-bwzfXH irgPNx"
+  className="sc-bdVaJa sc-bwzfXH gGFlHM"
 >
   Oct 09 2011 14:48:59
 </span>
@@ -10,7 +10,7 @@ exports[`<Timestamp> renders correctly with Date object 1`] = `
 
 exports[`<Timestamp> renders correctly with Date object and 'YBt' mask 1`] = `
 <span
-  className="sc-bdVaJa sc-bwzfXH irgPNx"
+  className="sc-bdVaJa sc-bwzfXH gGFlHM"
 >
   2011 October 14:48:59
 </span>
@@ -18,7 +18,7 @@ exports[`<Timestamp> renders correctly with Date object and 'YBt' mask 1`] = `
 
 exports[`<Timestamp> renders correctly with ISO8061 string 1`] = `
 <span
-  className="sc-bdVaJa sc-bwzfXH irgPNx"
+  className="sc-bdVaJa sc-bwzfXH gGFlHM"
 >
   Oct 09 2011 14:48:59
 </span>
@@ -26,7 +26,7 @@ exports[`<Timestamp> renders correctly with ISO8061 string 1`] = `
 
 exports[`<Timestamp> renders correctly with ISO8061 string and 'YBt' mask 1`] = `
 <span
-  className="sc-bdVaJa sc-bwzfXH irgPNx"
+  className="sc-bdVaJa sc-bwzfXH gGFlHM"
 >
   2011 October 14:48:59
 </span>

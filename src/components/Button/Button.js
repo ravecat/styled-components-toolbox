@@ -35,17 +35,6 @@ const Wrapper = styled(BaseComponent).attrs(({ type = "button" }) => ({
     border-color: ${theme.accentColor};
   }
 
-  ${({ disabled }) =>
-    disabled &&
-    css`
-      && {
-        cursor: default;
-        background: ${theme.textColor};
-        border-color: ${theme.dividerColor};
-        color: ${theme.dividerColor};
-      }
-    `};
-
   ${({ primary }) =>
     primary &&
     css`
@@ -113,6 +102,17 @@ const Wrapper = styled(BaseComponent).attrs(({ type = "button" }) => ({
     css`
       && {
         background: transparent;
+      }
+    `};
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      && {
+        cursor: default;
+        background: ${theme.textColor};
+        border-color: ${theme.dividerColor};
+        color: ${theme.dividerColor};
       }
     `};
 `;

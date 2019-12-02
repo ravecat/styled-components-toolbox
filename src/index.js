@@ -4,5 +4,6 @@ export { default as Text } from "./components/Text";
 export { default as Label } from "./components/Label";
 export { default as Header } from "./components/Header";
 export { Collapse } from "./components/Collapse";
+export { Accordion } from "./components/Accordion";
 export { default as Timestamp } from "./components/Timestamp";
 export { Media } from "./common/services";

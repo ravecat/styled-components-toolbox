@@ -10,6 +10,13 @@ const BaseComponent = styled.div`
   font-family: ${theme.fontFamily};
   font-size: ${theme.fontSize}px;
   font-weight: ${theme.fontWeight};
+  transition: all ease 0.35s;
+
+  *,
+  *:before,
+  *:after {
+    transition: all ease 0.35s;
+  }
 
   [hidden] {
     display: none !important;
