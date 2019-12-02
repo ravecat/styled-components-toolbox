@@ -94,6 +94,19 @@ test_module:
   script:
     - yarn test
 
+test_build:
+  image: node:10.13-alpine
+  stage: test
+  tags:
+    - docker
+  except:
+    - develop
+    - master
+  dependencies:
+    - build_deps
+  script:
+    - yarn build
+
 publish:
   stage: release
   tags:
