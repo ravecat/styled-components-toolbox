@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 import Icon from "../Icon";
 
 import { theme } from "common/theme";
-import BaseComponent from "common/components/BaseComponent";
+import BaseComponent from "components/BaseComponent";
 
 const Button = ({ children, icon, ...rest }) => (
   <Wrapper as="button" {...rest}>

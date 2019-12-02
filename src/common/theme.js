@@ -21,5 +21,7 @@ export const theme = {
   verticalAlign: "baseline",
   lineHeight: 1,
   iconWidth: 30,
-  iconHeight: 30
+  iconHeight: 30,
+  padding: "12px",
+  margin: "12px"
 };

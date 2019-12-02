@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import BaseComponent from "common/components/BaseComponent";
+import BaseComponent from "components/BaseComponent";
 
 const Label = styled(BaseComponent).attrs(({ labelFor }) => ({
   for: labelFor,

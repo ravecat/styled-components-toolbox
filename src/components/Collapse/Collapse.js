@@ -1,51 +1,60 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import CollapseIcon from "./components/CollapseIcon";
-
 import { theme } from "common/theme";
-import BaseComponent from "common/components/BaseComponent";
+import BaseComponent from "components/BaseComponent";
+import upArrow from "common/assets/up-arrow.svg";
+import downArrow from "common/assets/down-arrow.svg";
 
-const Collapse = ({ children, header, condition, handleClick, ...rest }) => (
-  <Wrapper {...rest}>
-    <HeaderWrapper {...rest}>
-      <Header>{header}</Header>
-      <CollapseIcon condition={condition} onClick={handleClick} />
-    </HeaderWrapper>
-    <Content condition={condition} {...rest}>
-      {children}
-    </Content>
-  </Wrapper>
+export const Collapse = ({ children, summary, details }) => (
+  <Details as="details" details={details}>
+    <Summary>{summary}</Summary>
+    <Content>{children}</Content>
+  </Details>
 );
 
-export default Collapse;
+const iconStyles = css`
+  width: 10px;
+  height: 14px;
+  float: right;
+  background-position: center;
+  background-size: 10px 14px;
+  background-repeat: no-repeat;
+  content: "";
+`;
 
-const Wrapper = styled(BaseComponent)`
+const Details = styled(BaseComponent)`
   width: 100%;
   text-align: left;
   border: none;
   outline: none;
+
+  ${({ details }) =>
+    details &&
+    `
+    & ${Summary}:after {
+      ${iconStyles};
+      background-image: url(${downArrow});
+    }
+
+    &[open] ${Summary}:after {
+      ${iconStyles};
+      background-image: url(${upArrow});
+    }
+  `};
 `;
 
-const HeaderWrapper = styled.div`
-  display: table;
-  padding: 12px;
+const Summary = styled.summary`
+  padding: ${theme.padding};
   color: ${theme.textColor};
   background-color: ${theme.primaryColor};
-`;
+  list-style: none;
 
-const Header = styled.div`
-  width: 100%;
-  display: table-cell;
-  vertical-align: middle;
+  &::-webkit-details-marker {
+    display: none;
+  }
 `;
 
 const Content = styled.div`
-  padding: 12px;
-
-  ${({ condition }) =>
-    !condition &&
-    css`
-      display: none;
-    `};
+  padding: ${theme.padding};
 `;

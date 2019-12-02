@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { theme } from "common/theme";
-import BaseComponent from "common/components/BaseComponent";
+import BaseComponent from "components/BaseComponent";
 
 const Text = styled(BaseComponent).attrs({
   as: "span"
