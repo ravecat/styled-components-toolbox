@@ -1,39 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 
-export const Accordion = ({ children }) => {
-  useEffect(() => {
-    const observer = new MutationObserver(mutations => {
-      mutations.forEach(mutation => {
-        const details = mutation.target;
-
-        if (!details.open) {
-          return;
-        }
-
-        document.querySelectorAll("div > details[open]").forEach(el => {
-          if (el === details) {
-            return;
-          }
-
-          el.open = false;
-        });
-      });
-    });
-
-    const config = {
-      attributeFilter: ["open"]
-    };
-
-    document
-      .querySelectorAll("div > details")
-      .forEach(el => observer.observe(el, config));
-
-    return () => observer.disconnect();
-  });
-
-  return <Wrapper>{children}</Wrapper>;
-};
+export default function Accordion({ className, children }) {
+  return <Wrapper className={className}>{children}</Wrapper>;
+}
 
 const Wrapper = styled.div`
   width: 100%;

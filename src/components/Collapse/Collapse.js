@@ -5,8 +5,8 @@ import { theme } from "common/theme";
 import BaseComponent from "components/BaseComponent";
 import downArrow from "common/assets/down-arrow.svg";
 
-export const Collapse = ({ children, summary, details }) => (
-  <Details as="details" details={details}>
+export const Collapse = ({ children, summary, details, className }) => (
+  <Details as="details" className={className} details={details}>
     <Summary>{summary}</Summary>
     <Content>{children}</Content>
   </Details>

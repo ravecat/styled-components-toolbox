@@ -1,10 +1,13 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
+import styled from "styled-components";
 import { text, boolean } from "@storybook/addon-knobs";
 
-import { Collapse } from "./index";
+// import { Collapse } from "./index";
+import { Collapse as BaseCollapse } from "./index";
 
-import { Accordion } from "components/Accordion";
+// import Accordion from "components/Accordion";
+import BaseAccordion from "components/Accordion";
 
 const CONTENT = `The chemical compound isobutyl acetate, also known as 2-methylpropyl ethanoate (IUPAC name)
 or β-methylpropyl acetate, is a common solvent. It is produced from the esterification of isobutanol with acetic acid.
@@ -34,3 +37,14 @@ storiesOf("Collapse", module).add("Accordion", () => (
     </Collapse>
   </Accordion>
 ));
+
+const Accordion = styled(BaseAccordion)`
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+`;
+
+const Collapse = styled(BaseCollapse)`
+  flex-basis: 50%;
+  padding: 0 1px;
+`;
