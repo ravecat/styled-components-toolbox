@@ -59,7 +59,6 @@ build_deps:
     expire_in: 1h
   except:
     - develop
-    - master
   tags:
     - docker
   dependencies: []
@@ -74,7 +73,6 @@ test_lint:
     - docker
   except:
     - develop
-    - master
   dependencies:
     - build_deps
   script:
@@ -88,7 +86,6 @@ test_module:
     - docker
   except:
     - develop
-    - master
   dependencies:
     - build_deps
   script:
@@ -101,13 +98,13 @@ test_build:
     - docker
   except:
     - develop
-    - master
   dependencies:
     - build_deps
   script:
     - yarn build
 
 publish:
+  image: node:10.13-alpine
   stage: release
   tags:
     - docker
@@ -121,6 +118,7 @@ publish:
     - GITLAB_TOKEN=$GITLAB_TOKEN yarn semantic-release
 
 storybook:
+  image: node:10.13-alpine
   stage: deploy
   tags:
     - docker
