@@ -1,3 +1,10 @@
+## [0.5.1](https://gitlab.com/ravecat/styled-components-toolbox/compare/0.5.0...0.5.1) (2019-12-07)
+
+
+### Bug Fixes
+
+* **scripts:** fix unavailable library for previous release ([5212114](https://gitlab.com/ravecat/styled-components-toolbox/commit/5212114))
+
 # [0.5.0](https://gitlab.com/ravecat/styled-components-toolbox/compare/0.4.0...0.5.0) (2019-12-05)
 
 
