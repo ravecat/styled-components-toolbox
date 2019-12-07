@@ -103,7 +103,7 @@ test_build:
   script:
     - yarn build
 
-publish:
+release:
   image: node:10.13-alpine
   stage: release
   tags:
@@ -113,8 +113,9 @@ publish:
   dependencies:
     - build_deps
   script:
-    - npm i -g yarn
     - apk add --no-cache git
+    - yarn build
+    - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
     - GITLAB_TOKEN=$GITLAB_TOKEN yarn semantic-release
 
 storybook:
