@@ -105,7 +105,7 @@
     "rollup-plugin-svg": "^1.0.1",
     "rollup-plugin-uglify": "^6.0.2",
     "sass-loader": "7.1.0",
-    "semantic-release": "^15.13.18",
+    "semantic-release": "^17.2.3",
     "style-loader": "0.23.1",
     "styled-components": "^4.3.2",
     "stylelint": "^9.3.0",
