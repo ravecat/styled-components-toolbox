@@ -22,7 +22,6 @@ module.exports = {
     "plugin:react/recommended",
     // TODO Enable after develelopment ready state
     // "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    // "react-app",
     // "react-app/jest",
     // "plugin:jest/recommended",
     // "plugin:jsx-a11y/strict",
