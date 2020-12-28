@@ -2,6 +2,14 @@
   "compilerOptions": {
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
-    "strictNullChecks": true
-  }
+    "strictNullChecks": true,
+  },
+  "inclide": [
+    "src",
+    "utils",
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/.*/"
+  ]
 }

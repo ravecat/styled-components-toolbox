@@ -1,7 +1,10 @@
 import { Meta } from "@storybook/react";
-import { createTemplate } from "../utils/storybook/template";
 
-import { Button as Component, ButtonProps as Props } from "../src/Button/Button";
+import { createTemplate } from "../utils/storybook/template";
+import {
+  Button as Component,
+  ButtonProps as Props,
+} from "../src/Button/Button";
 
 const story: Meta = {
   title: Component.name,
