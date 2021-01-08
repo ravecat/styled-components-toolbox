@@ -116,7 +116,7 @@ release:
     - apk add --no-cache git
     - yarn build
     - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-    - GITLAB_TOKEN=$GITLAB_TOKEN yarn semantic-release
+    - GITLAB_TOKEN=$GITLAB_TOKEN yarn release
 
 storybook:
   image: node:10.13-alpine

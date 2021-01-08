@@ -1,15 +1,22 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*", "*"]
+    },
     "jsx": "react",
+    "module": "commonjs",
+    "sourceMap": true,
+    "allowJs": true,
+    "checkJs": true,
+    "declaration": true,
     "allowSyntheticDefaultImports": true,
     "strictNullChecks": true,
+    "removeComments": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true
   },
-  "inclide": [
-    "src",
-    "utils",
-  ],
-  "exclude": [
-    "**/node_modules",
-    "**/.*/"
-  ]
+  "exclude": ["**/node_modules", "**/.*/"]
 }
