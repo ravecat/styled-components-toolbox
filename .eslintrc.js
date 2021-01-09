@@ -22,24 +22,12 @@ module.exports = {
     "plugin:react/recommended",
     // TODO Enable after develelopment ready state
     // "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    // "react-app/jest",
+    "react-app/jest",
     // "plugin:jest/recommended",
     // "plugin:jsx-a11y/strict",
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
   ],
-  // settings: {
-  //   "import/resolver": {
-  //     node: {
-  //       extensions: [".js"],
-  //       paths: ["src"],
-  //     },
-  //   },
-  // },
-  // env: {
-  //   browser: true,
-  //   es6: true,
-  // },
   globals: {
     document: true,
     module: true,

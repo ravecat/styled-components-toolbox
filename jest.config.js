@@ -9,10 +9,10 @@ module.exports = {
   testURL: "http://localhost",
   moduleDirectories: ["node_modules"],
   transform: {
-    "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
-    "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+    "^.+\\.(js|jsx|ts|tsx)$": "babel-jest",
+    "^.+\\.css$": "<rootDir>/.config/cssTransform.js",
     "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)":
-      "<rootDir>/config/jest/fileTransform.js"
+      "<rootDir>/.config/fileTransform.js"
   },
   transformIgnorePatterns: [
     "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
@@ -24,9 +24,11 @@ module.exports = {
   moduleFileExtensions: [
     "web.js",
     "js",
+    "jsx",
+    "ts",
+    "tsx",
     "json",
     "web.jsx",
-    "jsx",
     "node",
     "mjs"
   ],

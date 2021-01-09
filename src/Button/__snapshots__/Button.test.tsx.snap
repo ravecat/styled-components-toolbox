@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<button
+  className="storybook-button storybook-button--medium storybook-button--primary"
+  style={
+    Object {
+      "backgroundColor": "fff",
+    }
+  }
+  type="button"
+>
+  Test
+</button>
+`;
