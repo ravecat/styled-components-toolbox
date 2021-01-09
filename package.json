@@ -1,6 +1,6 @@
 {
   "name": "styled-components-toolbox",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Set of components based on styled-components",
   "homepage": "https://gitlab.com/rvct/styled-components-toolbox",
   "keywords": [
@@ -23,7 +23,9 @@
   "bugs": {
     "url": "https://gitlab.com/rvct/styled-components-toolbox/issues"
   },
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -35,6 +37,8 @@
     "@babel/preset-typescript": "^7.12.7",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-angular": "^11.0.0",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.1",
     "@storybook/addon-actions": "^6.1.11",
     "@storybook/addon-docs": "^6.1.11",
     "@storybook/addon-essentials": "^6.1.11",
@@ -66,6 +70,12 @@
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
     "react-test-renderer": "^17.0.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.36.1",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-sourcemaps": "^0.6.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.29.0",
     "stylelint": "^13.8.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recommended": "^3.0.0",
@@ -84,9 +94,10 @@
     "storybook": "start-storybook -p 9000",
     "storybook:build": "build-storybook -o ./build",
     "prebuild": "rimraf dist",
+    "postbuild": "npm pack --dry-run",
     "commit": "./node_modules/cz-customizable/standalone.js",
-    "build": "NODE_ENV=production rollup -c",
-    "test": "jest --passWithNoTests",
+    "build": "NODE_ENV=production rollup -c .config/rollup.config.js",
+    "test": "jest -c .config/jest.config.js --passWithNoTests",
     "lint:eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "lint:stylelint": "stylelint '**/*.{js,jsx,ts,tsx,css}'",
     "lint": "yarn lint:eslint && yarn lint:stylelint",
@@ -98,7 +109,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged -v && yarn test",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -g .config/commitlint.config.js -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
@@ -107,7 +118,7 @@
   },
   "config": {
     "cz-customizable": {
-      "config": "./commitizen.config.js"
+      "config": ".config/commitizen.config.js"
     }
   }
 }

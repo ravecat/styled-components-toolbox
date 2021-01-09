@@ -9,6 +9,7 @@
 /dist
 .rpt2_cache
 *.tgz
+/.rollup.cache
 
 # misc
 .DS_Store

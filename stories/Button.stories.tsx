@@ -1,6 +1,9 @@
 import { Meta } from "@storybook/react";
 import { createTemplate } from "utils/storybook/template";
-import { Button as Component, ButtonProps as Props } from "Button/Button";
+import {
+  Button as Component,
+  ButtonProps as Props,
+} from "components/Button/Button";
 
 const story: Meta = {
   title: Component.name,

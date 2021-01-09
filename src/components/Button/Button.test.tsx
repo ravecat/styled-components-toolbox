@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { Button } from "Button/Button";
+import { Button } from "components/Button/Button";
 
 it("renders correctly", () => {
   const tree = renderer

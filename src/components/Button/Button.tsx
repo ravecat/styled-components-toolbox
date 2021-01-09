@@ -1,7 +1,8 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, ReactNode } from "react";
 import "./button.css";
 
 export interface ButtonProps {
+  children?: ReactNode;
   primary: boolean;
   backgroundColor: string;
   size?: "small" | "medium" | "large";
