@@ -1,14 +1,19 @@
-FROM node:10.13-alpine AS build
+FROM node:10.22-alpine
+
 WORKDIR /app
 COPY . .
 RUN yarn install && \
     yarn storybook:build
 
-FROM alpine
-RUN apk update && apk add ca-certificates nginx && rm -rf /var/cache/apk/*
-RUN mkdir /run/nginx && touch /run/nginx/nginx.pid
+FROM alpine:3.12.3
+
+RUN apk update \ 
+    && apk add ca-certificates nginx \
+    && rm -rf /var/cache/apk/* \
+    && mkdir /run/nginx \
+    && touch /run/nginx/nginx.pid
 WORKDIR /app
-COPY --from=build /app/build /app
+COPY --from=0 /app/build /app
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
-EXPOSE 8001
+EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

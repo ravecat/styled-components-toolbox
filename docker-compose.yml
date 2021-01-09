@@ -1,8 +1,0 @@
-version: "3.5"
-
-services:
-  storybook:
-    container_name: storybook
-    build: .
-    ports:
-      - 8001:8001
