@@ -1,21 +1,16 @@
 import { Meta } from "@storybook/react";
-import { createTemplate } from "utils/storybook/template";
-import {
-  Button as Component,
-  ButtonProps as Props,
-} from "components/Button/Button";
+import { createTemplate } from "stories/utils/template";
+import { Button } from "components/Button";
+import { ButtonProps } from "components/Button";
 
 const story: Meta = {
-  title: Component.name,
-  component: Component,
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
+  title: "Button",
+  component: Button,
   args: {
-    label: "Label",
+    children: "Label",
   },
 };
 
 export default story;
 
-export const Default = createTemplate<Props>(Component);
+export const Default = createTemplate<ButtonProps>(Button);

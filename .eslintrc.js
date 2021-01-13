@@ -20,13 +20,11 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    // TODO Enable after develelopment ready state
-    // "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "react-app/jest",
-    // "plugin:jest/recommended",
-    // "plugin:jsx-a11y/strict",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:jest/recommended",
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
+    "plugin:jsx-a11y/strict",
   ],
   globals: {
     document: true,

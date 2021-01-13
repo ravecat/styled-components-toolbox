@@ -24,7 +24,7 @@ export type Theme = {
   iconHeight: number
 };
 
-export const theme: Theme = {
+export const theme: Theme = { 
   // colors
   darkPrimaryColor: "#303F9F",
   lightPrimaryColor: "#C5CAE9",
