@@ -17,7 +17,9 @@ const commonConfig = {
 }
 
 const commonPlugins = [
-  ts(),
+  ts({
+    tsconfig: "tsconfig.build.json",
+  }),
   resolve(),
   commonjs(),
   css({ output: "bundle.css" }),
