@@ -1,13 +1,8 @@
-import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { defaultTheme } from "common/theme";
 
-export type BaseProps = {
-  children?: React.ReactNode;
-};
-
 export const BaseComponent = styled.div.attrs(({ theme }) => ({
-  theme: { ...defaultTheme, ...theme },
+  theme: { ...defaultTheme, theme },
 }))`
   margin: 0;
   padding: 0;
@@ -22,3 +17,6 @@ export const BaseComponent = styled.div.attrs(({ theme }) => ({
     display: none !important;
   }
 `;
+
+// Use re-export in case library change
+export { styled, css };

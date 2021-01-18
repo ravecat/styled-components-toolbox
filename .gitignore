@@ -18,7 +18,6 @@
 .env.*.local
 .vscode
 
-.storybook
 .idea/
 
 npm-debug.log*

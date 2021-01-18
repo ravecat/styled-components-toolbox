@@ -1,6 +1,4 @@
-import { DefaultTheme } from "styled-components";
-
-export const defaultTheme: DefaultTheme = {
+export const defaultTheme = {
   darkPrimaryColor: "#303F9F",
   lightPrimaryColor: "#4b64fa",
   primaryColor: "#3F51B5",
@@ -15,6 +13,6 @@ export const defaultTheme: DefaultTheme = {
   boxSizing: "border-box",
   border: 0,
   verticalAlign: "baseline",
-  iconWidth: 30,
-  iconHeight: 30,
+  iconWidth: "30px",
+  iconHeight: "30px",
 };

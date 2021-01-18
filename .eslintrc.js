@@ -6,7 +6,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
     project: [".config/tsconfig.eslint.json"],
     ecmaVersion: 2020,
-    sourceType: 'module',
+    sourceType: "module",
     ecmaFeatures: {
       jsx: true,
     },
@@ -19,8 +19,8 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:react/recommended",
     "plugin:jest/recommended",
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
@@ -38,6 +38,7 @@ module.exports = {
   },
   rules: {
     "eol-last": [2, "always"],
+    "max-len": ["error", { code: 110 }],
     "no-console": [2, { allow: ["warn", "error"] }],
     "import/order": [2, { "newlines-between": "always" }],
     "react/jsx-sort-props": [
