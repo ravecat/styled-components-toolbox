@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { defaultTheme } from "common/theme";
 
 export const BaseComponent = styled.div.attrs(({ theme }) => ({
-  theme: { ...defaultTheme, theme },
+  theme: { ...defaultTheme, ...theme },
 }))`
   margin: 0;
   padding: 0;
